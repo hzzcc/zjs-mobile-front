@@ -1,8 +1,9 @@
 
 
-import Base from 'simple-auth/authorizers/base';
+import AuthorizerBase from 'simple-auth/authorizers/base';
+import AuthenticatorBase from 'simple-auth/authenticators/base';
 
-var CustomAuthenticator = Base.extend({
+var CustomAuthenticator = AuthenticatorBase.extend({
     restore: function(content) {
         Em.debug(content);
 //        var _this = this;
@@ -26,7 +27,7 @@ var CustomAuthenticator = Base.extend({
     }
 });
 
-var CustomAuthorizer = Base.extend({
+var CustomAuthorizer = AuthorizerBase.extend({
     authorize: function (jqXHR, requestOptions) {
         if (this.session.isAuthenticated && !Ember.isEmpty(this.session.get("user_token"))) {
 //            if ( requestOptions.type === "GET" ) {

@@ -17,10 +17,6 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
-module.exports = app.toTree();
+app.import('bower_components/ember/ember-template-compiler.js');
 
-app.import('vendor/rails-csrf/dist/named-amd/main.js', {
-  'rails-csrf': [
-    'service'
-  ]
-});
+module.exports = app.toTree();

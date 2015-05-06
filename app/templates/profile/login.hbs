@@ -1,6 +1,8 @@
 {{partial "components/header"}}
+
 <div class="content-wrap">
-	<form {{action 'authenticate' on='submit'}}>
+	{{#em-form model=this}}
+	<form {{action 'login' this on='submit'}}  method="post">
 		<div class="content-wrap-inner">
 			<div id="login">
 				<div class="text-center mt30">
@@ -10,22 +12,31 @@
 					<img src="images/nav_kouhao.jpg" width="220" />
 				</div>
 				<div class="login-form p30 pb20">
-					<div class="input-group mb20">
-						<span class="input-group-addon">
-							<i class="fa fa-user"></i>
-						</span>
-						<input autofocus="autofocus" placeholder="手机号" class="form-control" type="text" name="user[cell]" id="user_cell">
-					</div>
-					<div class="input-group mb20">
-						<span class="input-group-addon">
-							<i class="fa fa-lock"></i>
-						</span>
-						<input autocomplete="off" placeholder="密码" class="form-control" type="password" name="user[password]" id="user_password">
-					</div>
+
+					{{#em-form-group property="cell"}}
+							<div class="input-group mb20">
+								<span class="input-group-addon">
+									<i class="fa fa-user"></i>
+								</span>
+								{{input class="form-control placeholder-no-fix" type="text" autocomplete="off" autofocus="autofocus" placeholder="邮箱地址" value=model.cell}}
+							</div>
+			        {{#if view.hasError}}<span for="cell" class="help-block">{{view.errors}}</span>{{/if}}
+			    {{/em-form-group}}
+
+			    {{#em-form-group property="password"}}
+							<div class="input-group mb20">
+								<span class="input-group-addon">
+									<i class="fa fa-lock"></i>
+								</span>
+								{{input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="密码" value=model.password id="password"}}
+							</div>
+			        {{#if view.hasError}}<span for="password" class="help-block">{{view.errors}}</span>{{/if}}
+			    {{/em-form-group}}
+
 					<div class="row">
 						<div class="col-md-6 checkbox margin-bottom-20">
 							<label>
-								<input type="checkbox">记住我
+								{{input type='checkbox' checked=model.rememberMe}} 记住我
 							</label>
 						</div>
 						<div class="col-md-12">
@@ -53,4 +64,5 @@
 			</div>
 		</div>
 	</form>
+	{{/em-form}}
 </div>
