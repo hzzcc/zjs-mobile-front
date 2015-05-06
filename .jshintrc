@@ -2,7 +2,14 @@
   "predef": [
     "document",
     "window",
-    "-Promise"
+    "-Promise",
+    "location",
+    "setTimeout",
+    "Ember",
+    "Em",
+    "DS",
+    "$",
+    "SimpleAuth"
   ],
   "browser": true,
   "boss": true,

@@ -6,7 +6,6 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
-
   this.resource('home', { path: "/"});
 
   this.resource('profile', function () {
@@ -17,4 +16,11 @@ export default Router.map(function() {
     this.route('resetPassword');
   });
 
+  this.route('protected', function() {
+    this.route('user');
+  });
+
+  this.route('invest', function() {
+    this.route('show');
+  });
 });

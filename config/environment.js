@@ -19,6 +19,15 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['simple-auth'] = {
+    authorizer: 'authorizer:custom',
+    routeAfterAuthentication: 'home',
+    authenticationRoute: 'profile.login'
+  };
+  ENV['simple-auth-devise'] = {
+    // identificationAttributeName: 'cell'
+  }
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

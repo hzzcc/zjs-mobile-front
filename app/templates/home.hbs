@@ -1,1 +1,8 @@
-home
+{{partial "components/header"}}
+<div class="content-wrap">
+  {{#if session.isAuthenticated}}
+    <a {{ action 'invalidateSession' }}>Logout</a>
+  {{else}}
+    {{#link-to 'profile.login'}}Login{{/link-to}}
+  {{/if}}
+</div>
