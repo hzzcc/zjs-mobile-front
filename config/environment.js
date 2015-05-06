@@ -34,6 +34,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.rootURL = "/";
+    ENV.routerLocation = 'hash';
   }
 
   if (environment === 'test') {
@@ -49,7 +51,9 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.baseURL = "/mobile";
+    ENV.rootURL = "/";
+    ENV.routerLocation = 'hash';
   }
 
   return ENV;
