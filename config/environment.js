@@ -27,6 +27,7 @@ module.exports = function(environment) {
   ENV['simple-auth-devise'] = {
     // identificationAttributeName: 'cell'
   }
+  ENV.NAMESPACE = "api/v1";
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
