@@ -9,6 +9,7 @@ body {
 	position: fixed;
 	background: white;
 	box-shadow: 0px 0px 5px 2px #bbb;
+	border-bottom: solid 1px #bbb;
 	padding-bottom: 10px;
 	top: 0;
 	left: 0;
@@ -29,12 +30,15 @@ body {
 	color: #555;
 }
 .ui-navigator {
-	position: fixed;
-	bottom: 0;
+	/*position: fixed;
+	left: 0;
+	bottom: 0;*/
 	background: white;
 	border: none;
 	box-shadow: 0 0px 5px 1px #bbb;
-	z-index: 9999;
+	border-top: solid 1px #bbb;
+	z-index: 1000;
+	width: 100%;
 }
 .ui-scroller {
 	width: 100%;
