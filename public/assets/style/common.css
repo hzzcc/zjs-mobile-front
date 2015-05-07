@@ -30,9 +30,9 @@ body {
 	color: #555;
 }
 .ui-navigator {
-	/*position: fixed;
+	position: fixed;
 	left: 0;
-	bottom: 0;*/
+	bottom: 0px;
 	background: white;
 	border: none;
 	box-shadow: 0 0px 5px 1px #bbb;
