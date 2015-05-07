@@ -33,6 +33,7 @@ export default function() {
   */
     this.post("/users", function(db, request) {
       var attrs = JSON.parse(request.requestBody);
+      console.log(attrs);
       var newUser = db.users.insert(attrs);
 
       return {
@@ -48,6 +49,7 @@ export default function() {
   */
     this.put("/users/:id", function(db, request) {
       var attrs = JSON.parse(request.requestBody);
+      console.log(attrs);
       var user = db.users.find(request.params.id);
       var newUser = db.users.update(user,attrs);
 

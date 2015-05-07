@@ -1,13 +1,14 @@
 import Ember from 'ember';
 import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
+import SimpleAuthConfig from "simple-auth/configuration";
 
 export default Ember.Route.extend(ApplicationRouteMixin,{
     actions: {
         sessionAuthenticationSucceeded: function() {
-            var attemptedTransition = this.get(SimpleAuth.Configuration.sessionPropertyName).get('attemptedTransition');
+            var attemptedTransition = this.get(SimpleAuthConfig.sessionPropertyName).get('attemptedTransition');
             if (attemptedTransition) {
                 attemptedTransition.retry();
-                this.get(SimpleAuth.Configuration.sessionPropertyName).set('attemptedTransition', null);
+                this.get(SimpleAuthConfig.sessionPropertyName).set('attemptedTransition', null);
             } else {
                 var _this = this;
                 if (this.get('session').get('style') === 'regist'){
@@ -15,7 +16,7 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
                         _this.controllerFor('protected.user').send('editProfile', 'loginIn');
                     });
                 }else{
-                    this.transitionTo(SimpleAuth.Configuration.routeAfterAuthentication);
+                    this.transitionTo(SimpleAuthConfig.routeAfterAuthentication);
                 }
             }
         },

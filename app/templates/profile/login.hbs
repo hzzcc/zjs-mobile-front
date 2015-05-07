@@ -12,13 +12,17 @@
 					<img src="images/nav_kouhao.jpg" width="220" />
 				</div>
 				<div class="login-form p30 pb20">
+					<div {{bind-attr class=":alert :alert-danger hasError::hidden"}}>
+        		<i class="fa fa-warning"></i>
+        		<span>{{this.errorMsg}}</span>
+    			</div>
 
 					{{#em-form-group property="cell"}}
 							<div class="input-group mb20">
 								<span class="input-group-addon">
 									<i class="fa fa-user"></i>
 								</span>
-								{{input class="form-control placeholder-no-fix" type="text" autocomplete="off" autofocus="autofocus" placeholder="邮箱地址" value=model.cell}}
+								{{input class="form-control placeholder-no-fix" type="text" autocomplete="off" autofocus="autofocus" placeholder="手机号" value=model.cell}}
 							</div>
 			        {{#if view.hasError}}<span for="cell" class="help-block">{{view.errors}}</span>{{/if}}
 			    {{/em-form-group}}

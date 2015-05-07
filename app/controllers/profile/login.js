@@ -17,17 +17,30 @@ export default Ember.Controller.extend(LoginControllerMixin, {
                     _this.set('hasError', true);
                     var errorMessage;
                     for (var i in error.errors){
+                      if ($.isArray(error.errors[i]) && (error.errors[i].length > 0)) {
                         for (var j=0;j< error.errors[i].length; j++){
-                            errorMessage = i+error.errors[i][j];
+                            errorMessage = error.errors[i][j];
                             break;
                         }
                         break;
+                      }
                     }
                     _this.set('errorMsg', errorMessage);
                 });
             },function() {
-              console.log(credential.get('isValid')); // false
-              console.log(credential.get('errors.cell'));
+              _this.set('hasError', true);
+              var errorMessage;
+              for (var i in credential.errors) {
+                if ($.isArray(credential.errors[i]) && (credential.errors[i].length > 0)) {
+                  for (var j=0;j< credential.errors[i].length; j++){
+                      errorMessage = credential.errors[i][j];
+                      break;
+                  }
+                  break;
+                }
+              }
+              _this.set('errorMsg', errorMessage);
+              console.log(errorMessage);
             });
         }
     }

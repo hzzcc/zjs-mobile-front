@@ -9,7 +9,14 @@ export default DS.Model.extend(EmberValidations, {
   rememberMe: DS.attr('boolean', {defaultValue: false}),
   token: DS.attr(),
   validations: {
-    cell: {presence: true}
+    cell: {
+      presence: true,
+      presence: { message: '请输入您的手机号'}
+    },
+    password: {
+      presence: true,
+      presence: { message: '密码不能为空' }
+    }
 //       email: {
 // //            presence: true,
 //           // presence: { message: '邮箱地址不能为空'},

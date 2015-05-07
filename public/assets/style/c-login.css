@@ -5,3 +5,10 @@
 #submit-btn {
 	font-size: 18px;
 }
+
+#getCheckCode {
+	height: 44px;
+  font-size: 18px;
+  padding-top: 9px;
+  float: right;
+}
