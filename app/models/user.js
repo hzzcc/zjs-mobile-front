@@ -10,11 +10,9 @@ export default DS.Model.extend(EmberValidations, {
   token: DS.attr(),
   validations: {
     cell: {
-      presence: true,
       presence: { message: '请输入您的手机号'}
     },
     password: {
-      presence: true,
       presence: { message: '密码不能为空' }
     }
 //       email: {
