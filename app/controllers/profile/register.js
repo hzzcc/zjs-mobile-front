@@ -11,12 +11,19 @@ export default Ember.Controller.extend({
             user.validate().then(function() {
                 user.set('profile_attributes',{city: null});
                 user.save().then(function (model) {
-                    _this.get('session').authenticate(_this.get('authenticator'), {user_token: model.get('token'),user_id: model.get('id')} /*credential.toJSON()*/);
+                    _this.get('session').authenticate(_this.get('authenticator'), {user_token: model.get('authentication_token'),user_id: model.id} /*credential.toJSON()*/);
                     Em.debug('USER: ' + JSON.stringify(user.toJSON()));
                 }, function (error) {
-                  console.log(error);
                     _this.set('hasError', true);
-                    _this.set('errorMsg', error.error);
+                    var errorMessage;
+                    for (var i in error.errors){
+                        for (var j=0;j< error.errors[i].length; j++){
+                            errorMessage = i+error.errors[i][j];
+                            break;
+                        }
+                        break;
+                    }
+                    _this.set('errorMsg', errorMessage);
                 });
             },function() {
               _this.set('hasError', true);

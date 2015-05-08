@@ -10,7 +10,7 @@ export default DS.Model.extend(EmberValidations, {
   real_name: DS.attr(),
   avatar: DS.attr(),
   agreed: DS.attr('boolean', {defaultValue: true}),
-  token: DS.attr(),
+  authentication_token: DS.attr(),
   verification_code: DS.attr(),
   validations: {
     cell: {

@@ -37,10 +37,10 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
     //for rails test
-    // ENV.baseURL = "/mobile";
-    // ENV['ember-cli-mirage'] = {
-    //   enabled: false
-    // }
+    ENV.baseURL = "/mobile";
+    ENV['ember-cli-mirage'] = {
+      enabled: false
+    }
     //for rails test end
 
     ENV.rootURL = "/";
