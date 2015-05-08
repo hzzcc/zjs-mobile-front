@@ -14,18 +14,9 @@ export default Ember.Controller.extend(LoginControllerMixin, {
                 credential.save().then(function(model) {
                     _this.get('session').authenticate(_this.get('authenticator'), {user_token: model.get('token')} /*credential.toJSON()*/);
                 }, function(error) {
+                    Ember.debug(error);
                     _this.set('hasError', true);
-                    var errorMessage;
-                    for (var i in error.errors){
-                      if ($.isArray(error.errors[i]) && (error.errors[i].length > 0)) {
-                        for (var j=0;j< error.errors[i].length; j++){
-                            errorMessage = error.errors[i][j];
-                            break;
-                        }
-                        break;
-                      }
-                    }
-                    _this.set('errorMsg', errorMessage);
+                    _this.set('errorMsg', error.error);
                 });
             },function() {
               _this.set('hasError', true);

@@ -34,33 +34,26 @@ export default function() {
 
   // 用户登录
   this.post('/user_tokens', function (db, req) {
-          // return {
-          //     user_tokens: {
-          //         id: 1,
-          //         token: 'CFSFSF#$*#',
-          //         user_id: 1
-          //     },
-          //     'users': [
-          //         {
-          //             id: 1,
-          //             cell: 1232134,
-          //             username: 'sbsbsbsbsb',
-          //             email: 'hasjdg@qq.com',
-          //             avatar: {url: 'images/temp/u34.png'},
-          //             real_name: "Dell",
-          //             created_at: "2013-7-4"
-          //         }
-          //     ]
-          // };
-           return {
-               'errors': [
-                   {'message': '邮箱地址或密码错误', 'fieldName': 'password'}
-               ]
-           };
-          //  res.send(400,
-          //      {"errors":{"password":["过短（最短为 8 个字符）"]}}
-          //  );
-      }, 402);
+          return {
+              user_tokens: {
+                  id: 1,
+                  token: 'CFSFSF#$*#',
+                  user_id: 1
+              },
+              'users': [
+                  {
+                      id: 1,
+                      cell: 1232134,
+                      username: 'sbsbsbsbsb',
+                      email: 'hasjdg@qq.com',
+                      avatar: {url: 'images/temp/u34.png'},
+                      real_name: "Dell",
+                      created_at: "2013-7-4"
+                  }
+              ]
+          };
+      });
+      // this.post('/user_tokens', { 'error': '邮箱地址或密码错误' }, 401 );
 
       // 用户登录
       this.put('/user_tokens', function (db, req) {

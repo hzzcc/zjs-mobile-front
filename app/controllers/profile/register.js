@@ -14,16 +14,9 @@ export default Ember.Controller.extend({
                     _this.get('session').authenticate(_this.get('authenticator'), {user_token: model.get('token')} /*credential.toJSON()*/);
                     Em.debug('USER: ' + JSON.stringify(user.toJSON()));
                 }, function (error) {
+                  console.log(error);
                     _this.set('hasError', true);
-                    var errorMessage;
-                    for (var i in error.errors){
-                        for (var j=0;j< error.errors[i].length; j++){
-                            errorMessage = i+error.errors[i][j];
-                            break;
-                        }
-                        break;
-                    }
-                    _this.set('errorMsg', errorMessage);
+                    _this.set('errorMsg', error.error);
                 });
             },function() {
               _this.set('hasError', true);
