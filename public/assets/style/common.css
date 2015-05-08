@@ -115,3 +115,7 @@ input[type=checkbox], input[type=radio] {
 .red {
 	color: #E7141A;
 }
+.logout-btn {
+	font-size: 1.4em;
+	cursor: pointer;
+}
