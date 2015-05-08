@@ -8,6 +8,7 @@ export default DS.Model.extend(EmberValidations, {
   passwordConfirmation: DS.attr(),
   username: DS.attr(),
   real_name: DS.attr(),
+  avatar: DS.attr(),
   agreed: DS.attr('boolean', {defaultValue: true}),
   token: DS.attr(),
   verification_code: DS.attr(),

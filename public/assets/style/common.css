@@ -4,6 +4,7 @@ html, body {
 body {
 	color: #555;
 	min-width: 0;
+	background: #f1f1f1;
 }
 .ui-toolbar {
 	position: fixed;
@@ -118,4 +119,7 @@ input[type=checkbox], input[type=radio] {
 .logout-btn {
 	font-size: 1.4em;
 	cursor: pointer;
+}
+.border-all {
+	border: solid 1px #bbb;
 }

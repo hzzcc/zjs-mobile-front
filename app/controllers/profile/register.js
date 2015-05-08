@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
             user.validate().then(function() {
                 user.set('profile_attributes',{city: null});
                 user.save().then(function (model) {
-                    _this.get('session').authenticate(_this.get('authenticator'), {user_token: model.get('token')} /*credential.toJSON()*/);
+                    _this.get('session').authenticate(_this.get('authenticator'), {user_token: model.get('token'),user_id: model.get('id')} /*credential.toJSON()*/);
                     Em.debug('USER: ' + JSON.stringify(user.toJSON()));
                 }, function (error) {
                   console.log(error);

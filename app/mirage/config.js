@@ -24,7 +24,19 @@ export default function() {
     this.get('/contacts/:id', 'user');
     this.get('/contacts/:id', ['contact', 'addresses']);
   */
-
+    this.get("/users/:id", function(db, request) {
+      return {
+        user:  {
+              id: 1,
+              cell: 1232134,
+              username: 'sbsbsbsbsb',
+              email: 'hasjdg@qq.com',
+              avatar: {url: 'images/user.jpg'},
+              real_name: "Dell",
+              created_at: "2013-7-4"
+          }
+      };
+    });
   /*
     POST shorthands
 
@@ -46,7 +58,7 @@ export default function() {
                       cell: 1232134,
                       username: 'sbsbsbsbsb',
                       email: 'hasjdg@qq.com',
-                      avatar: {url: 'images/temp/u34.png'},
+                      avatar: {url: 'images/user.jpg'},
                       real_name: "Dell",
                       created_at: "2013-7-4"
                   }
@@ -69,7 +81,7 @@ export default function() {
                     cell: 1232134,
                     username: 'sbsbsbsbsb',
                     email: 'hasjdg@qq.com',
-                    avatar: {url: 'images/temp/u34.png'},
+                    avatar: {url: 'images/user.jpg'},
                     real_name: "Dell",
                     created_at: "2013-7-4"
                   }
