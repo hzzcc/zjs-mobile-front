@@ -29,7 +29,7 @@
   								<i class='fa fa-mobile'></i>
 
   							</span>
-                {{input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="手机号" value=model.cell}}
+                {{input id="user_cell" class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="手机号" value=model.cell}}
   						</div>
   						<div class='input-group margin-bottom-20'>
   							<span class='input-group-addon'>
@@ -60,13 +60,13 @@
                   </div>
   							</div>
   							<div class='col-xs-6'>
-  								<a class='btn-u btn-u-red' id='getCheckCode' href='javascript:;'>获取验证码</a>
+  								<a class='btn-u btn-u-red' id='getCheckCode' {{action 'getCheckCode'}}>获取验证码</a>
   							</div>
   						</div>
               <div class='row'>
   							<div class='col-lg-6 checkbox'>
   								<label>
-                    {{input type='checkbox' checked=model.agreed}}  已阅读
+                    {{input id="agreeBtn" type='checkbox' checked=model.agreed}}  已阅读
   									<a class='red sign-item' href='javascript:;'>条款</a>
   								</label>
   							</div>

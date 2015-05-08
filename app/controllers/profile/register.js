@@ -1,5 +1,54 @@
 import Ember from 'ember';
 
+
+var canGet = true;
+var codeInterval = null;
+var codeCount = 60;
+
+function setCheckDom(){
+  codeCount -= 1;
+  if (codeCount > 0){
+    $("#getCheckCode").text(codeCount + "s后重新获取");
+  }else {
+    clearInterval(codeInterval);
+    canGet = true;
+    $("#getCheckCode").text("获取验证码");
+    setCanGet(true);
+  }
+}
+
+function setCanGet(can){
+  canGet = can;
+  if (can) {
+    $("#getCheckCode").addClass("btn-u-red");
+    $("#getCheckCode").removeClass("btn-u-default");
+  }else {
+    $("#getCheckCode").removeClass("btn-u-red");
+    $("#getCheckCode").addClass("btn-u-default");
+  }
+}
+function getCheckCode() {
+  $.ajax({
+    data: null,
+    url: "/users/generate_verification_code?cell=" + $("#user_cell").val(),
+    type: 'get',
+    contentType: false,
+    processData: false,
+    success: function (data) {
+      if (data.error) {
+        clearInterval(codeInterval);
+        canGet = true;
+        $("#getCheckCode").text("获取验证码");
+        setCanGet(true);
+        alert("发送验证码失败");
+      }
+    },
+    error: function () {
+
+    }
+  });
+}
+
 export default Ember.Controller.extend({
   authenticator: 'authenticator:custom',
   toolbar_name: "注册",
@@ -7,6 +56,10 @@ export default Ember.Controller.extend({
   toolbar_back_url: "home",
   actions: {
         register: function(user) {
+            if (!user.get('agreed')) {
+              alert("如需注册请阅读并勾选用户协议");
+              return;
+            }
             var _this = this;
             user.validate().then(function() {
                 user.set('profile_attributes',{city: null});
@@ -40,6 +93,19 @@ export default Ember.Controller.extend({
               _this.set('errorMsg', errorMessage);
               console.log(errorMessage);
             });
+        },
+        getCheckCode: function(){
+          if ($("#user_cell").val().length !== 11) {
+            alert("请正确填写手机号");
+            return;
+          }
+          if (canGet){
+            getCheckCode();
+            setCanGet(false);
+            codeCount = 60;
+            $("#getCheckCode").text("60s后重新获取");
+            codeInterval=setInterval(setCheckDom,1000);
+          }
         }
     }
 });
