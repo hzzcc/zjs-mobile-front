@@ -1,16 +1,12 @@
 import DS from 'ember-data';
 import EmberValidations from 'ember-validations/mixin';
 
-export default DS.Model.extend(EmberValidations, {
-  email: DS.attr(),
+export default DS.Model.extend(EmberValidations,{
   cell: DS.attr(),
   password: DS.attr(),
-  passwordConfirmation: DS.attr(),
-  username: DS.attr(),
-  real_name: DS.attr(),
-  agreed: DS.attr('boolean', {defaultValue: true}),
+  rememberMe: DS.attr('boolean', {defaultValue: false}),
   token: DS.attr(),
-  verification_code: DS.attr(),
+  user_id: DS.belongsTo('user'),
   validations: {
     cell: {
       presence: { message: '请输入您的手机号'}
