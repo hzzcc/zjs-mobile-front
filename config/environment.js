@@ -22,7 +22,8 @@ module.exports = function(environment) {
   ENV['simple-auth'] = {
     authorizer: 'authorizer:custom',
     routeAfterAuthentication: 'home',
-    authenticationRoute: 'profile.login'
+    authenticationRoute: 'profile.login',
+    applicationRootUrl: '/mobile'
   };
   ENV['simple-auth-devise'] = {
     // identificationAttributeName: 'cell'
@@ -37,9 +38,9 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
     //for rails test
-    ENV.baseURL = "/mobile";
+    ENV.baseURL = '/mobile';
     ENV['ember-cli-mirage'] = {
-      enabled: false
+      // enabled: false
     }
     //for rails test end
 
@@ -60,7 +61,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.baseURL = "/mobile";
+    ENV.baseURL = '/mobile';
     ENV.rootURL = "/";
     ENV.routerLocation = 'hash';
   }

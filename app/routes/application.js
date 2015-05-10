@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 import SimpleAuthConfig from "simple-auth/configuration";
+import config from '../config/environment';
 
 export default Ember.Route.extend(ApplicationRouteMixin,{
     actions: {
@@ -22,7 +23,12 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
         },
         invalidateSession: function() {
           this.get('session').invalidate();
-        }
+        },
+        sessionInvalidationSucceeded: function() {
+          if (!Ember.testing) {
+            window.location.replace(config.baseURL + config.rootURL);
+          }
+        },
     }
 
 });

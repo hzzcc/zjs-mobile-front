@@ -44,7 +44,7 @@ export default DS.ActiveModelAdapter.extend({
           if (typeof response.message !== 'undefined') {
             errors['Message'] = response.message;
           }
-          return new DS.InvalidError(jsonErrors);
+          return new DS.InvalidError(errors);
         } else if (jqXHR && jqXHR.status === 502) {
             //TODO: 处理服务器不可用的错误
         } else {
