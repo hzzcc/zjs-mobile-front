@@ -95,7 +95,15 @@ export default function() {
       var newUser = db.users.insert(attrs);
 
       return {
-        user: newUser
+        user:  {
+              id: 1,
+              cell: 1232134,
+              username: 'sbsbsbsbsb',
+              email: 'hasjdg@qq.com',
+              avatar: {url: 'images/user.jpg'},
+              real_name: "Dell",
+              created_at: "2013-7-4"
+          }
       };
     });
 

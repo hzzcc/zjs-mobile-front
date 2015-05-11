@@ -125,3 +125,35 @@ input[type=checkbox], input[type=radio] {
 .border-all {
 	border: solid 1px #bbb;
 }
+.bg-white {
+	background-color: white;
+}
+
+
+.nav-ver-list {
+
+}
+.nav-ver-item {
+	border-top: solid 1px #bbb;
+	padding: 20px 30px;
+	background: white;
+}
+.fs18 {
+	font-size: 18px;
+}
+.mt5 {
+	margin-top: 5px;
+}
+
+.icon-logo {
+	width: 20px;
+	height: 20px;
+}
+.icon-logo:before {
+	content: "";
+	background: url("/mobile/images/molstr-icon.png") no-repeat;
+	background-size: contain;
+	height: 100%;
+	display: block;
+	margin-top: 3px;
+}
