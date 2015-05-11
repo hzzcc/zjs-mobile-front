@@ -21,6 +21,7 @@ export default Router.map(function() {
   this.route('protected', function() {
     this.route('user');
     this.route('safe_setting');
+    this.route('reset_password');
   });
 
   this.route('invest', function() {
