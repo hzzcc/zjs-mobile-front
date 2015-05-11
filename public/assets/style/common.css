@@ -182,7 +182,7 @@ input[type=checkbox], input[type=radio] {
 	background-size: contain;
 	height: 100%;
 	display: block;
-	margin-top: 3px;
+	margin-top: 5px;
 }
 
 .white {
@@ -190,4 +190,7 @@ input[type=checkbox], input[type=radio] {
 }
 .color-inherit {
 	color: inherit;
+}
+.light-gray {
+	color: #bbb;
 }
