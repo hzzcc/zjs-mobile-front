@@ -9,7 +9,8 @@
     "Em",
     "DS",
     "$",
-    "SimpleAuth"
+    "SimpleAuth",
+    "gmu"
   ],
   "browser": true,
   "boss": true,

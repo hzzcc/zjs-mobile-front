@@ -29,8 +29,9 @@ var FieldBase = Ember.ContainerView.extend({
     showLabel: Ember.computed.alias('parentView.showLabel'),
     init: function() {
         this._super();
-        if (this.get('showLabel'))
+        if (this.get('showLabel')){
             this.pushObject(this.labelView.create({}));
+          }
         this.pushObject(this.valueView.create({}));
     }
 });
