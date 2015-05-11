@@ -59,7 +59,7 @@ export default Ember.Controller.extend({
     if (this.model.get('username') === undefined || this.model.get('username').length === 0) {
       return;
     }
-    Ember.$.getJSON(config.NAMESPACE + '/users/check_username_uniqueness?username=' + this.model.get('username')).then(function(){
+    Ember.$.getJSON('/' + config.NAMESPACE + '/users/check_username_uniqueness?username=' + this.model.get('username')).then(function(){
       },function(errors){
         if (errors.status === 422) {
           _this.set('hasError', true);
@@ -72,7 +72,7 @@ export default Ember.Controller.extend({
     if (this.model.get('cell') === undefined || this.model.get('cell').length != 11) {
       return;
     }
-    Ember.$.getJSON(config.NAMESPACE + '/users/check_cell_uniqueness?cell=' + this.model.get('cell')).then(function(){
+    Ember.$.getJSON('/' + config.NAMESPACE + '/users/check_cell_uniqueness?cell=' + this.model.get('cell')).then(function(){
       },function(errors){
         if (errors.status === 422) {
           _this.set('hasError', true);
