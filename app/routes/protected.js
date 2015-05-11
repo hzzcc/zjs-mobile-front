@@ -6,7 +6,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   beforeModel: function(transition){
     this._super(transition);
     if (transition.targetName === "protected.index"){
-      this.transitionToRoute('protected.user');
+      this.transitionTo('protected.user');
     }
   }
 });
