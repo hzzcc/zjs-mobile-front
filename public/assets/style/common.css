@@ -153,6 +153,9 @@ input[type=checkbox], input[type=radio] {
 .fs18 {
 	font-size: 18px;
 }
+.fs20 {
+	font-size: 20px;
+}
 .mt5 {
 	margin-top: 5px;
 }
@@ -169,6 +172,19 @@ input[type=checkbox], input[type=radio] {
 	display: block;
 	margin-top: 3px;
 }
+.icon-idcard {
+	width: 20px;
+	height: 20px;
+}
+.icon-idcard:before {
+	content: "";
+	background: url("/mobile/images/idcard.png") no-repeat;
+	background-size: contain;
+	height: 100%;
+	display: block;
+	margin-top: 3px;
+}
+
 .white {
 	color: white;
 }

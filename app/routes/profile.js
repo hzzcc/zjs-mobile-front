@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   beforeModel: function(){
-    this.transitionTo('profile.login');
+    if (transition.targetName === "profile.index"){
+      this.transitionTo('profile.login');
+    }
   }
 });
