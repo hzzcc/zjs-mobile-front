@@ -4,6 +4,7 @@ import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixi
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   beforeModel: function(transition){
+    this._super(transition);
     if (transition.targetName === "protected.index"){
       this.transitionTo('protected.user');
     }

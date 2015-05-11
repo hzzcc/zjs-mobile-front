@@ -37,6 +37,13 @@ export default function() {
           }
       };
     });
+    // this.get("/users/check_cell_uniqueness", function(db, request) {
+    //   return {
+    //     message:  "手机号还未被注册"
+    //   };
+    // });
+    this.get("/users/check_cell_uniqueness", {message:  "手机号已被注册"}, 422);
+    this.get("/users/check_username_uniqueness", {message:  "该昵称已被使用"}, 422);
   /*
     POST shorthands
 

@@ -21,7 +21,7 @@
   								<i class='fa fa-user'></i>
 
   							</span>
-                {{input class="form-control placeholder-no-fix" type="text" autocomplete="off" autofocus="autofocus" placeholder="昵称" value=model.username}}
+                {{input class="form-control placeholder-no-fix" type="text" autocomplete="off" autofocus="autofocus" placeholder="昵称" value=model.username maxlength="10"}}
   						</div>
   						<div class='input-group margin-bottom-20'>
   							<span class='input-group-addon'>
@@ -29,7 +29,7 @@
   								<i class='fa fa-mobile'></i>
 
   							</span>
-                {{input id="user_cell" class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="手机号" value=model.cell}}
+                {{input id="user_cell" class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="手机号" value=model.cell maxlength="11"}}
   						</div>
   						<div class='input-group margin-bottom-20'>
   							<span class='input-group-addon'>
@@ -37,7 +37,7 @@
   								<i class='fa fa-lock'></i>
 
   							</span>
-                {{input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="密码" value=model.password id="password"}}
+                {{input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="密码" value=model.password id="password" maxlength="12"}}
   						</div>
 
   						<div class='input-group margin-bottom-20'>
@@ -46,7 +46,7 @@
   								<i class='fa fa-lock'></i>
 
   							</span>
-                {{input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="确认密码" value=model.passwordConfirmation}}
+                {{input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="确认密码" value=model.passwordConfirmation maxlength="12"}}
   						</div>
   						<div class='row'>
   							<div class='col-xs-6'>
