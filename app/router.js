@@ -20,9 +20,11 @@ export default Router.map(function() {
 
   this.route('protected', function() {
     this.route('user');
+    this.route('safe_setting');
   });
 
   this.route('invest', function() {
     this.route('show');
   });
+
 });

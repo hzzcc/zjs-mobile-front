@@ -29,7 +29,7 @@ body {
 	margin-left: 24px;
 	padding-top: -4px;
 	font-size: 1.714em;
-	margin-top: -3px;
+	margin-top: 0px;
 }
 .ui-toolbar-left i {
 	color: #555;
@@ -168,4 +168,10 @@ input[type=checkbox], input[type=radio] {
 	height: 100%;
 	display: block;
 	margin-top: 3px;
+}
+.white {
+	color: white;
+}
+.color-inherit {
+	color: inherit;
 }
