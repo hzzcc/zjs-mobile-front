@@ -14,7 +14,7 @@ export default Ember.Controller.extend({
           var errorMessage;
           for (var i in error.errors){
               for (var j=0;j< error.errors[i].length; j++){
-                  errorMessage = i+error.errors[i][j];
+                  errorMessage = error.errors[i][j];
                   break;
               }
               break;

@@ -114,15 +114,17 @@ export default function() {
       };
     });
 
-    this.post("/reset_passwords", function(db, request) {
-      var attrs = JSON.parse(request.requestBody);
-      console.log(attrs);
-      var newResetPassword = db.users.insert(attrs);
+    // this.post("/reset_passwords", function(db, request) {
+    //   var attrs = JSON.parse(request.requestBody);
+    //   console.log(attrs);
+    //   var newResetPassword = db.users.insert(attrs);
+    //
+    //   return {
+    //     reset_password:  newResetPassword
+    //   };
+    // });
 
-      return {
-        reset_password:  newResetPassword
-      };
-    });
+    this.post("/reset_passwords",  { errors: {message:['密码错误']}}, 422);
 
   /*
     PUT shorthands

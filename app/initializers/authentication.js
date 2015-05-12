@@ -29,11 +29,11 @@ var CustomAuthenticator = AuthenticatorBase.extend({
 
 var CustomAuthorizer = AuthorizerBase.extend({
     authorize: function (jqXHR, requestOptions) {
-        if (this.session.isAuthenticated && !Ember.isEmpty(this.session.get("user_token"))) {
+        if (this.session.isAuthenticated && !Ember.isEmpty(this.session.content.secure.user_token)) {
 //            if ( requestOptions.type === "GET" ) {
 //                jqXHR.setRequestHeader('If-Modified-Since', 0);
 //            }
-            jqXHR.setRequestHeader('SECAuthorization', this.session.get("user_token"));
+            jqXHR.setRequestHeader('SECAuthorization', this.session.content.secure.user_token);
         }
     }
 });
