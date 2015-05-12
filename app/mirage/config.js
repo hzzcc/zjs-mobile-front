@@ -44,6 +44,37 @@ export default function() {
     // });
     this.get("/users/check_cell_uniqueness", {message:  "手机号已被注册"}, 422);
     this.get("/users/check_username_uniqueness", {message:  "该昵称已被使用"}, 422);
+
+    this.get("/billings",function(db, request) {
+      return {
+        'billings':  [
+          {
+            id: 1,
+            amount: '12112',
+            billing_type: '充值',
+            billable_type: '',
+            created_at: new Date(),
+            state: 'pending',
+            billing_number: '20158923891234192',
+            remark: '第三方支付'
+          },
+          {
+            id: 2,
+            amount: '12112',
+            billing_type: '充值',
+            billable_type: '',
+            created_at: new Date(),
+            state: 'pending',
+            billing_number: '20158923891234192',
+            remark: '第三方支付'
+          }
+        ],
+        "meta": {
+            "total_pages": 21
+        }
+      };
+    });
+
   /*
     POST shorthands
 

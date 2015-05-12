@@ -40,13 +40,15 @@
   <div class="row">
     <ul class="nav-ver-list w-all">
       <li class="nav-ver-item">
-        <div class="fs18">
-          <span class="text-center w30 inline-block">
-            <i class="fa fa-bars"></i>
-          </span>
-          <span class="ml10">交易记录</span>
-          <i class="fa fa-chevron-right pull-right mt5"></i>
-        </div>
+        {{#link-to 'protected.billing' class="color-inherit"}}
+          <div class="fs18">
+            <span class="text-center w30 inline-block">
+              <i class="fa fa-bars"></i>
+            </span>
+            <span class="ml10">交易记录</span>
+            <i class="fa fa-chevron-right pull-right mt5"></i>
+          </div>
+        {{/link-to}}
       </li>
       <li class="nav-ver-item">
         <div class="fs18">

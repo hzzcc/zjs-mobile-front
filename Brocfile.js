@@ -18,5 +18,6 @@ var app = new EmberApp();
 // along with the exports of each module as its value.
 
 app.import('bower_components/ember/ember-template-compiler.js');
+app.import('bower_components/momentjs/min/moment-with-locales.js');
 
 module.exports = app.toTree();

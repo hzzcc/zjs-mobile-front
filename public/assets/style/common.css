@@ -142,6 +142,8 @@ input[type=checkbox], input[type=radio] {
 	border-top: solid 1px #bbb;
 	padding: 15px 30px;
 	background: white;
+	display: table;
+  width: 100%;
 }
 .nav-ver-item:active {
 	background: #f1f1f1;
@@ -205,4 +207,14 @@ input[type=checkbox], input[type=radio] {
 }
 .light-gray {
 	color: #bbb;
+}
+
+.pagination .page-number {
+	display: none;
+}
+.pagination .arrow{
+	display: inline-block;
+}
+.pagination .active{
+	display: inline-block;
 }
