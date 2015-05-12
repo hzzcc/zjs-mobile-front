@@ -14,6 +14,8 @@ export default DS.Model.extend(EmberValidations, {
   authentication_token: DS.attr(),
   verification_code: DS.attr(),
   level: DS.attr(),
+  balance: DS.attr(),
+  frost: DS.attr(),
   validations: {
     cell: {
       presence: { message: '请输入您的手机号'}

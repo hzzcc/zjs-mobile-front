@@ -45,6 +45,16 @@ export default function() {
     this.get("/users/check_cell_uniqueness", {message:  "手机号已被注册"}, 422);
     this.get("/users/check_username_uniqueness", {message:  "该昵称已被使用"}, 422);
 
+    this.get("/users/account", function(db, request) {
+      return {
+        account:  {
+              id: 1,
+              balance: 121323,
+              frost: 34122
+          }
+      };
+    });
+
     this.get("/billings",function(db, request) {
       return {
         'billings':  [
