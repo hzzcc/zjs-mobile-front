@@ -13,6 +13,7 @@ export default DS.Model.extend(EmberValidations, {
   agreed: DS.attr('boolean', {defaultValue: true}),
   authentication_token: DS.attr(),
   verification_code: DS.attr(),
+  level: DS.attr(),
   validations: {
     cell: {
       presence: { message: '请输入您的手机号'}
