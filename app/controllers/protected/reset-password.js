@@ -8,6 +8,7 @@ export default Ember.Controller.extend({
     resetPassword: function(credential) {
       var _this = this;
       credential.save().then(function(model) {
+        _this.set('hasError', false);
         _this.transitionToRoute(_this.get('toolbar_back_url'));
       }, function(error) {
           _this.set('hasError', true);
