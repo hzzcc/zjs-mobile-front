@@ -5,7 +5,6 @@ export default Ember.Route.extend({
         return this.store.find('user', this.session.content.secure.user_id);
     },
     setupController: function (controller, model) {
-      console.log(model);
       var _this = this;
       _this._super(controller, model);
       this.controllerFor('application').set("nav_item_1","");

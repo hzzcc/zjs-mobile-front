@@ -126,6 +126,17 @@ export default function() {
 
     this.post("/reset_passwords",  { errors: {message:['密码错误']}}, 422);
 
+    // this.post("/auths",  { errors: {message:['认证失败']}}, 422);
+    this.post("/auths", function(db, request) {
+      var attrs = JSON.parse(request.requestBody);
+      console.log(attrs);
+      var newAuth = db.auths.insert(attrs);
+
+      return {
+        auth:  newAuth
+      };
+    });
+
   /*
     PUT shorthands
 

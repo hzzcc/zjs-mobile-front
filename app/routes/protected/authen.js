@@ -2,10 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function(params) {
-      return this.store.find('user', this.session.content.secure.user_id);
-  },
-  afterModel: function(posts, transition) {
-      this.store.reloadRecord(posts);
+      return this.store.createRecord('auth');
   },
   setupController: function (controller, model) {
     var _this = this;

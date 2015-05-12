@@ -14,16 +14,31 @@
         </div>
       </li>
       <li class="nav-ver-item">
-        {{#link-to '' class="color-inherit"}}
+        {{#if authencated}}
           <div class="fs18">
             <span class="text-center w30 inline-block">
-              <i class="fa icon-idcard"></i>
+              <i class="icon-idcard"></i>
             </span>
             <span class="ml10">实名认证</span>
             <i class="fa fa-chevron-right pull-right mt5"></i>
-            <span class="pull-right light-gray">{{verify_message}}</span>
+            <span class="pull-right light-gray">
+                已认证
+            </span>
           </div>
-        {{/link-to}}
+        {{else}}
+          {{#link-to 'protected.authen' class="color-inherit"}}
+            <div class="fs18">
+              <span class="text-center w30 inline-block">
+                <i class="icon-idcard"></i>
+              </span>
+              <span class="ml10">实名认证</span>
+              <i class="fa fa-chevron-right pull-right mt5"></i>
+              <span class="pull-right light-gray">
+                  未认证
+              </span>
+            </div>
+          {{/link-to}}
+        {{/if}}
       </li>
       <li class="nav-ver-item">
         {{#link-to 'protected.reset_password' class="color-inherit"}}
