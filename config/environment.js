@@ -23,7 +23,7 @@ module.exports = function(environment) {
     authorizer: 'authorizer:custom',
     routeAfterAuthentication: 'home',
     authenticationRoute: 'profile.login',
-    applicationRootUrl: '/mobile'
+    applicationRootUrl: '/'
   };
   ENV['simple-auth-devise'] = {
     // identificationAttributeName: 'cell'
@@ -38,10 +38,10 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
     //for rails test
-    ENV.baseURL = '/mobile';
-    ENV['ember-cli-mirage'] = {
-      enabled: false
-    }
+    // ENV.baseURL = '/mobile';
+    // ENV['ember-cli-mirage'] = {
+    //   // enabled: false
+    // }
     //for rails test end
 
     ENV.rootURL = "/";
@@ -61,8 +61,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.baseURL = '/mobile';
-    ENV.rootURL = "/";
+    // ENV.baseURL = '/mobile';
+    // ENV.rootURL = "/";
     ENV.routerLocation = 'hash';
   }
 

@@ -218,3 +218,17 @@ input[type=checkbox], input[type=radio] {
 .pagination .active{
 	display: inline-block;
 }
+
+.contact-item .contact-item-title{
+  padding: 10px 15px;
+	font-size: 20px;
+}
+
+.contact-item .contact-item-content {
+	padding: 10px 48px;
+  background: white;
+  font-size: 18px;
+}
+.bold {
+	font-weight: bold;
+}

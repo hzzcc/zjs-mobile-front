@@ -30,4 +30,5 @@ export default Router.map(function() {
     this.route('show');
   });
 
+  this.route('contact_us');
 });
