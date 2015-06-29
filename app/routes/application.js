@@ -22,11 +22,12 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
             }
         },
         invalidateSession: function() {
+          window.location.replace(config.baseURL);
           this.get('session').invalidate();
         },
         sessionInvalidationSucceeded: function() {
           if (!Ember.testing) {
-            window.location.replace(config.baseURL + config.rootURL);
+            window.location.replace(config.baseURL);
           }
         },
     }

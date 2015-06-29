@@ -62,7 +62,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // ENV.baseURL = '/mobile';
-    // ENV.rootURL = "/";
+    ENV.rootURL = "/";
     ENV.routerLocation = 'hash';
   }
 

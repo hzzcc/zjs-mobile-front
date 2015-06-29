@@ -7,9 +7,12 @@
 			{{#if toolbar_logout}}
 				{{#if session.isAuthenticated}}
 					<a {{ action 'invalidateSession' }} class="black logout-btn">退出</a>
-				{{else}}
-					{{#link-to 'profile.login' class="black logout-btn"}}未登录{{/link-to}}
 				{{/if}}
+			{{/if}}
+			{{#if toolbar_login}}
+				{{#unless session.isAuthenticated}}
+					{{#link-to 'profile.login' class="black logout-btn"}}未登录{{/link-to}}
+				{{/unless}}
 			{{/if}}
 		</div>
 <!--header toolbar end-->

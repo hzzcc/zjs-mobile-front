@@ -191,6 +191,16 @@ export default function() {
       };
     });
 
+    this.post("/orders", function(db, request) {
+      var attrs = JSON.parse(request.requestBody);
+      console.log(attrs);
+      var newOrder = db.auths.insert(attrs);
+
+      return {
+        order:  newOrder
+      };
+    });
+
   /*
     PUT shorthands
 

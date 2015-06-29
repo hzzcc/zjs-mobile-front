@@ -47,12 +47,12 @@
   <div class="row">
     <div class="col-md-12 mt15">
       <div class="col-xs-6">
-        <button class="btn-u btn-u-lg rounded-2x btn-u-sea bet-button" {{action 'bet' '看涨'}}>看涨<span class="ret-up"></span></button>
+        <button class="btn-u btn-u-lg rounded-2x btn-u-red bet-button" {{action 'bet' '看涨'}}>看涨<span class="ret-up"></span></button>
 
       </div>
 
       <div class="col-xs-6 align-right">
-        <button class="btn-u btn-u-lg rounded-2x btn-u-red bet-button"  {{action 'bet' '看跌'}}>看跌<span class="ret-down"></span></button>
+        <button class="btn-u btn-u-lg rounded-2x btn-u-sea bet-button"  {{action 'bet' '看跌'}}>看跌<span class="ret-down"></span></button>
 
       </div>
     </div>
@@ -97,16 +97,16 @@
           <span class="bold">总金额：</span> {{total_pay}}元
         </div>
         <div>
-          <span class="bold">你的账户余额：</span>
+          <span class="bold">账户余额：</span>
           {{#if session.isAuthenticated}}
-            <span id="user_amount">**</span>元
+            <span id="user_amount">{{this.user_balance}}</span>元
           {{else}}
             {{#link-to 'profile.login' class="red"}}未登录{{/link-to}}
           {{/if}}
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn-u btn-u-md rounded-2x btn-u-red ">确认</button>
+        <button type="button" class="btn-u btn-u-md rounded-2x btn-u-red " {{action 'confirm'}}>确认</button>
         <button type="button" class="btn-u btn-u-md rounded-2x btn-u-default " data-dismiss="modal" {{action 'closeModal'}}>取消</button>
       </div>
     </div>
