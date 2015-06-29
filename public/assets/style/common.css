@@ -80,7 +80,7 @@ body {
 .content-wrap {
 	/*height: 100%;*/
   padding-top: 43px;
-  padding-bottom: 53px;
+  padding-bottom: 60px;
 }
 .content-wrap-inner {
 	height: 100%;
@@ -231,4 +231,135 @@ input[type=checkbox], input[type=radio] {
 }
 .bold {
 	font-weight: bold;
+}
+.center {
+	text-align: center;
+}
+
+.bet-item-box input[type="radio"] {
+	-webkit-appearance: none;
+	opacity: 0;
+  filter: alpha(opacity=0);
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+	margin-top: 0;
+}
+
+.bet-item-box {
+  background: white;
+  height: 60px;
+  width: 60px;
+  border-radius: 20%!important;
+  display: inline-block;
+  border: solid 1px #ddd;
+	position: relative;
+}
+
+.bet-item-box h3 {
+	margin-top: 15px;
+}
+
+.bet-item-box.active {
+	background: #888;
+}
+.bet-item-box.active h3 {
+	color: white;
+}
+
+.align-right {
+	text-align: right;
+}
+
+.inline {
+	display: inline-block;
+}
+.ltr-spc-2 {
+	letter-spacing: 2px;
+}
+
+.bet-button {
+	width: 7em;
+}
+
+span.ret-up {
+  display: inline-block;
+  margin-left: 8px;
+  border-bottom: 16px solid;
+  border-right: 9px solid transparent;
+  border-left: 9px solid transparent;
+  border-top: none;
+}
+
+span.ret-down {
+  display: inline-block;
+  margin-left: 8px;
+  border-top: 16px solid;
+  border-right: 9px solid transparent;
+  border-left: 9px solid transparent;
+  border-bottom: none;
+}
+
+.border-dot {
+	border: dashed 1px #bbb;
+}
+
+.bet-des {
+	padding: 10px;
+	font-size: 16px;
+}
+
+.bet-des h3 {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.bet-des p {
+	text-indent: 2em;
+}
+
+
+.modal h4 {
+	font-size: 20px;
+	text-align: center;
+}
+
+.modal .modal-header {
+	border-bottom: 1px dashed #666;
+  margin: 0 18px;
+}
+
+.modal .modal-footer {
+	border-top: 0;
+	text-align: center;
+}
+
+.modal.fade.in {
+	background-color: rgba(200,200,200,0.5);
+}
+
+.modal .modal-dialog {
+	margin: 45% 16%;
+}
+
+.modal .modal-body {
+	font-size: 18px;
+}
+
+.modal .modal-footer button {
+	width: 40%;
+	font-size: 16px;
+}
+
+#orderConfirmModal .modal-body {
+	padding-left: 32px;
+}
+
+a.black {
+	color: #555;
 }

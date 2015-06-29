@@ -55,6 +55,19 @@ export default function() {
       };
     });
 
+    this.get("/products/:id", function(db, request) {
+      return {
+        product:  {
+              id: 1,
+              name: "股指一天期权",
+              price: 40,
+              date: '2015-6-19',
+              benefit: "",
+              max: 10
+          }
+      };
+    });
+
     this.get("/billings",function(db, request) {
       return {
         'billings':  [
