@@ -3,8 +3,15 @@ import DS from 'ember-data';
 export default DS.Model.extend({
   quantity: DS.attr(),
   price: DS.attr(),
+  total_pay: DS.attr(),
   order_type: DS.attr(),
   earning: DS.attr(),
   user_id: DS.belongsTo('user'),
-  product_id: DS.belongsTo('product')
+  product_id: DS.belongsTo('product'),
+  created_at: DS.attr(),
+  created_time: function(){
+        var _this = this;
+        moment.locale('zh-cn');
+        return moment(_this.get('created_at')).format("YYYY/MM/DD");
+    }.property('created_at')
 });

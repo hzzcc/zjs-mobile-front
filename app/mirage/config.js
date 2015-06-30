@@ -96,7 +96,31 @@ export default function() {
           }
         ],
         "meta": {
-            "total_pages": 21
+            "total_pages": 3
+        }
+      };
+    });
+
+    this.get("/orders",function(db, request) {
+      return {
+        'orders':  [
+          {
+            id: 1,
+            total_pay: 1000,
+            order_type: '看涨',
+            earning: '',
+            created_at: new Date()
+          },
+          {
+            id: 2,
+            total_pay: 400,
+            order_type: '看跌',
+            earning: -12,
+            created_at: new Date()
+          }
+        ],
+        "meta": {
+            "total_pages": 2
         }
       };
     });

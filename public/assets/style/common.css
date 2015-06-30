@@ -422,6 +422,11 @@ a.color-inherit:hover {
   background-color: white;
 }
 
+.nav>li.active>a:focus {
+  text-decoration: none;
+  background-color: white;
+}
+
 .profile-tab .nav-tabs {
 	display: table;
   width: 100%;
@@ -459,4 +464,42 @@ a.color-inherit:hover {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.order-list-tit {
+	padding: 15px 4% 15px 8%;
+}
+
+.order-list .wp1 {
+	width: 18%;
+	display: inline-block;
+}
+
+.order-list .wp2 {
+	width: 26%;
+	display: inline-block;
+}
+
+.order-list .wp3 {
+	width: 26%;
+	display: inline-block;
+}
+
+.order-list .wp4 {
+	width: 24%;
+	display: inline-block;
+}
+
+.order-list .nav-ver-item .wp2 {
+	width: 32%;
+	display: inline-block;
+}
+.order-list .nav-ver-item .wp3 {
+	width: 28%;
+	display: inline-block;
+}
+
+.order-list .nav-ver-item .wp4 {
+	width: 22%;
+	display: inline-block;
 }
