@@ -18,7 +18,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
                     var errorMessage;
                     for (var i in error.errors){
                         for (var j=0;j< error.errors[i].length; j++){
-                            errorMessage = error.errors[i][j];
+                            errorMessage =  i + error.errors[i][j];
                             break;
                         }
                         break;

@@ -133,29 +133,29 @@ export default function() {
   */
 
   // 用户登录
-  this.post('/user_tokens', function (db, req) {
-          return {
-              user_tokens: {
-                  id: 1,
-                  token: 'CFSFSF#$*#',
-                  user_id: 1
-              },
-              'users': [
-                  {
-                      id: 1,
-                      cell: 1232134,
-                      username: 'sbsbsbsbsb',
-                      email: 'hasjdg@qq.com',
-                      avatar: {url: 'images/user.jpg'},
-                      real_name: "Dell",
-                      created_at: "2013-7-4",
-                      balance: 222222,
-                      frost: 333333
-                  }
-              ]
-          };
-      });
-      // this.post('/user_tokens', { 'errors': {'password':['邮箱地址或密码错误']}}, 422 );
+  // this.post('/user_tokens', function (db, req) {
+  //         return {
+  //             user_tokens: {
+  //                 id: 1,
+  //                 token: 'CFSFSF#$*#',
+  //                 user_id: 1
+  //             },
+  //             'users': [
+  //                 {
+  //                     id: 1,
+  //                     cell: 1232134,
+  //                     username: 'sbsbsbsbsb',
+  //                     email: 'hasjdg@qq.com',
+  //                     avatar: {url: 'images/user.jpg'},
+  //                     real_name: "Dell",
+  //                     created_at: "2013-7-4",
+  //                     balance: 222222,
+  //                     frost: 333333
+  //                 }
+  //             ]
+  //         };
+  //     });
+      this.post('/user_tokens', { 'errors': {'密码':["错误"],'手机号':["长度不够","不能为空"]}}, 422 );
 
       // 用户登录
       this.put('/user_tokens', function (db, req) {
