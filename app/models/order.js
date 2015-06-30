@@ -13,5 +13,12 @@ export default DS.Model.extend({
         var _this = this;
         moment.locale('zh-cn');
         return moment(_this.get('created_at')).format("YYYY/MM/DD");
-    }.property('created_at')
+    }.property('created_at'),
+  typeColor: function() {
+      if (this.get('order_type') === '看涨') {
+        return 'type-red';
+      }else {
+        return 'type-blue';
+      }
+    }.property('order_type')
 });

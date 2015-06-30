@@ -28,6 +28,8 @@ export default Router.map(function() {
     this.route('reset_password');
     this.route('authen');
     this.route('billing');
+    this.route('cashin');
+    this.route('cashout');
   });
 
   this.route('invest', function() {

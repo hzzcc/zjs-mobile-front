@@ -2,7 +2,7 @@ import Ember from 'ember';
 import BillingStates from 'my-test/transforms/billing-state';
 
 export default Ember.Controller.extend({
-  
+
   queryParams: ["page", "perPage"],
   pageBinding: "content.page",
   perPageBinding: "content.perPage",

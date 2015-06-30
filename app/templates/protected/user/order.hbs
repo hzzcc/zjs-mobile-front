@@ -2,14 +2,14 @@
 
   <ul class="nav-ver-list order-list">
     <li class="order-list-tit">
-      <span class="wp1">类型</span>
-      <span class="wp2 center">金额（元）</span>
-      <span class="wp3 center">日期</span>
-      <span class="wp4 center">收益（元）</span>
+      <span class="wp1 bold">类型</span>
+      <span class="wp2 bold center">金额（元）</span>
+      <span class="wp3 bold center">日期</span>
+      <span class="wp4 bold center">收益（元）</span>
     </li>
     {{#each order in content}}
       <li class="nav-ver-item">
-        <span class="wp1">{{order.order_type}}</span>
+        <span class="wp1 {{order.typeColor}}">{{order.order_type}}</span>
         <span class="wp2 center">{{order.total_pay}}</span>
         <span class="wp3 center">{{order.created_time}}</span>
         <span class="wp4 center">{{order.earning}}</span>

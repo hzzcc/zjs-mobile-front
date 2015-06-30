@@ -1,0 +1,30 @@
+{{partial "components/header"}}
+
+<div class="content-wrap">
+  <div class="row ">
+    <div class="col-md-12 mt20">
+      账户余额：<span class="red">{{user.balance}}</span> 元
+    </div>
+    <form {{action 'cashin' this on='submit'}}  method="post" class="mt20" id="cashin_form">
+      <div {{bind-attr class=":alert :alert-danger hasError::hidden"}}>
+        <i class="fa fa-warning"></i>
+        <span>{{this.errorMsg}}</span>
+      </div>
+      <div class="input-group mb10">
+        <span class="input-group-addon">
+          <i class="icon-lock"></i>
+        </span>
+        {{input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="请输入提现金额" value=model.amount }}
+      </div>
+      <div class="col-md-12 fs-sm">
+        温馨提示：资金由xxxxxx托管
+      </div>
+      <div class="row mt20">
+        <div class="col-md-12 text-center">
+          <button id="submit-btn" class="btn-u btn-u-red col-sm-6 w150" type="submit">确认</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

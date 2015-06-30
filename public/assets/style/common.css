@@ -503,3 +503,11 @@ a.color-inherit:hover {
 	width: 22%;
 	display: inline-block;
 }
+
+.type-red {
+	color: #DF2E2E;
+}
+
+.type-blue {
+	color: #41BE68;
+}
