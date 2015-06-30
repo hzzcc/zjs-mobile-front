@@ -5,8 +5,8 @@ export default DS.Model.extend(EmberValidations,{
   cell: DS.attr(),
   password: DS.attr(),
   rememberMe: DS.attr('boolean', {defaultValue: false}),
-  token: DS.attr(),
-  user_id: DS.belongsTo('user'),
+  authentication_token: DS.attr(),
+  user: DS.belongsTo('user'),
   validations: {
     cell: {
       presence: { message: '请输入您的手机号'}

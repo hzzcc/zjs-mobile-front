@@ -12,7 +12,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
             var _this = this;
             credential.validate().then(function() {
                 credential.save().then(function(model) {
-                    _this.get('session').authenticate(_this.get('authenticator'), {user_token: model.get('token'), user_id: model.get('user_id').id } /*credential.toJSON()*/);
+                    _this.get('session').authenticate(_this.get('authenticator'), {user_token: model.get('authentication_token'), user_id: model.get('user_id').id } /*credential.toJSON()*/);
                 }, function(error) {
                     _this.set('hasError', true);
 
@@ -20,7 +20,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
                 });
             },function() {
               _this.set('hasError', true);
-              
+
               _this.set('errorMsg', '用户名或密码错误');
             });
         }
