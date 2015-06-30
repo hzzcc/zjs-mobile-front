@@ -155,7 +155,7 @@ export default function() {
   //             ]
   //         };
   //     });
-      this.post('/user_tokens', { 'errors': {'密码':["错误"],'手机号':["长度不够","不能为空"]}}, 422 );
+      this.post('/user_tokens',{"errors":"Failed"}, 422 );
 
       // 用户登录
       this.put('/user_tokens', function (db, req) {

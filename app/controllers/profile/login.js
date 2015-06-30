@@ -15,29 +15,13 @@ export default Ember.Controller.extend(LoginControllerMixin, {
                     _this.get('session').authenticate(_this.get('authenticator'), {user_token: model.get('token'), user_id: model.get('user_id').id } /*credential.toJSON()*/);
                 }, function(error) {
                     _this.set('hasError', true);
-                    var errorMessage;
-                    for (var i in error.errors){
-                        for (var j=0;j< error.errors[i].length; j++){
-                            errorMessage =  i + error.errors[i][j];
-                            break;
-                        }
-                        break;
-                    }
-                    _this.set('errorMsg', errorMessage);
+
+                    _this.set('errorMsg', '用户名或密码错误');
                 });
             },function() {
               _this.set('hasError', true);
-              var errorMessage;
-              for (var i in credential.errors) {
-                if ($.isArray(credential.errors[i]) && (credential.errors[i].length > 0)) {
-                  for (var j=0;j< credential.errors[i].length; j++){
-                      errorMessage = credential.errors[i][j];
-                      break;
-                  }
-                  break;
-                }
-              }
-              _this.set('errorMsg', errorMessage);
+              
+              _this.set('errorMsg', '用户名或密码错误');
             });
         }
     }
