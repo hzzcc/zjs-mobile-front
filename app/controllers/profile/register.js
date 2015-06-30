@@ -30,7 +30,7 @@ function setCanGet(can){
 function getCheckCode() {
   $.ajax({
     data: null,
-    url: "/users/generate_verification_code?cell=" + $("#user_cell").val(),
+    url: "/users/send_code?cell=" + $("#user_cell").val(),
     type: 'get',
     contentType: false,
     processData: false,

@@ -39,9 +39,9 @@ module.exports = function(environment) {
 
     //for rails test
     // ENV.baseURL = '/mobile';
-    // ENV['ember-cli-mirage'] = {
-    //   // enabled: false
-    // }
+    ENV['ember-cli-mirage'] = {
+      enabled: false
+    }
     //for rails test end
 
     ENV.rootURL = "/";
