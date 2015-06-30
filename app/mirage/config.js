@@ -25,6 +25,7 @@ export default function() {
     this.get('/contacts/:id', ['contact', 'addresses']);
   */
     this.get("/users/:id", function(db, request) {
+      console.log('get user info');
       return {
         user:  {
               id: 1,
@@ -33,7 +34,9 @@ export default function() {
               email: 'hasjdg@qq.com',
               avatar: {url: 'images/user.jpg'},
               real_name: "Dell",
-              created_at: "2013-7-4"
+              created_at: "2013-7-4",
+              balance: 222222,
+              frost: 333333
           }
       };
     });
@@ -121,7 +124,9 @@ export default function() {
                       email: 'hasjdg@qq.com',
                       avatar: {url: 'images/user.jpg'},
                       real_name: "Dell",
-                      created_at: "2013-7-4"
+                      created_at: "2013-7-4",
+                      balance: 222222,
+                      frost: 333333
                   }
               ]
           };
@@ -144,7 +149,9 @@ export default function() {
                     email: 'hasjdg@qq.com',
                     avatar: {url: 'images/user.jpg'},
                     real_name: "Dell",
-                    created_at: "2013-7-4"
+                    created_at: "2013-7-4",
+                    balance: 222222,
+                    frost: 333333
                   }
               ]
           };
@@ -163,7 +170,9 @@ export default function() {
               email: 'hasjdg@qq.com',
               avatar: {url: 'images/user.jpg'},
               real_name: "Dell",
-              created_at: "2013-7-4"
+              created_at: "2013-7-4",
+              balance: 222222,
+              frost: 333333
           }
       };
     });

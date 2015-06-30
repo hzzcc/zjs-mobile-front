@@ -19,7 +19,11 @@ export default Router.map(function() {
   });
 
   this.route('protected', function() {
-    this.route('user');
+    this.route('user', function() {
+      this.route('billing');
+      this.route('order');
+      this.route('safe-setting');
+    });
     this.route('safe_setting');
     this.route('reset_password');
     this.route('authen');

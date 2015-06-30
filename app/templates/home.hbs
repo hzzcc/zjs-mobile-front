@@ -99,7 +99,7 @@
         <div>
           <span class="bold">账户余额：</span>
           {{#if session.isAuthenticated}}
-            <span id="user_amount">{{this.user_balance}}</span>元
+            <span id="user_amount">{{this.user.balance}}</span>元
           {{else}}
             {{#link-to 'profile.login' class="red"}}未登录{{/link-to}}
           {{/if}}

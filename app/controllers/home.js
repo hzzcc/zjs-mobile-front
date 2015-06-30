@@ -30,7 +30,8 @@ export default Ember.Controller.extend({
       if (_this.session.isAuthenticated){
         _this.set('order.quantity', _this.get('bet_times'));
         _this.set('order.price', _this.get('model.price'));
-        _this.set('order.user', _this.store.find('user',_this.session.content.secure.user_id));
+        _this.set('user.balance', _this.get('user.balance') - _this.get('total_pay'));
+        _this.set('order.user', _this.user);
         _this.set('order.product', _this.model);
 
         _this.order.save().then(function(model) {
