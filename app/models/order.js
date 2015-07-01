@@ -6,8 +6,8 @@ export default DS.Model.extend({
   total_pay: DS.attr(),
   order_type: DS.attr(),
   earning: DS.attr(),
-  user_id: DS.belongsTo('user'),
-  product_id: DS.belongsTo('product'),
+  user: DS.belongsTo('user'),
+  product: DS.belongsTo('product'),
   created_at: DS.attr(),
   created_time: function(){
         var _this = this;

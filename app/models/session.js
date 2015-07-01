@@ -5,7 +5,7 @@ export default DS.Model.extend(EmberValidations,{
   cell: DS.attr(),
   password: DS.attr(),
   rememberMe: DS.attr('boolean', {defaultValue: false}),
-  authentication_token: DS.attr(),
+  token: DS.attr(),
   user: DS.belongsTo('user'),
   validations: {
     cell: {
