@@ -17,7 +17,34 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+app.import('bower_components/bootstrap/dist/css/bootstrap.css');
+
+app.import('vendor/zepto.js');
+
+app.import('bower_components/bootstrap/dist/js/bootstrap.min.js');
+
+app.import('vendor/gmu/src/extend/touch.js');
+app.import('vendor/gmu/src/extend/iscroll.js');
+app.import('vendor/gmu/src/extend/highlight.js');
+app.import('vendor/gmu/src/extend/parseTpl.js');
+app.import('vendor/gmu/src/core/gmu.js');
+app.import('vendor/gmu/src/core/event.js');
+app.import('vendor/gmu/src/core/widget.js');
+app.import('vendor/gmu/src/widget/navigator/navigator.js');
+app.import('vendor/gmu/src/widget/navigator/scrolltonext.js');
+app.import('vendor/gmu/src/widget/navigator/$scrollable.js');
+// app.import('vendor/gmu/src/widget/navigator/evenness.js');
+app.import('vendor/gmu/src/widget/toolbar/toolbar.js');
+
 app.import('bower_components/ember/ember-template-compiler.js');
 app.import('bower_components/momentjs/min/moment-with-locales.js');
+
+app.import('vendor/gmu/widget/toolbar/toolbar.css');
+// app.import('vendor/gmu/widget/toolbar/toolbar.default.css');
+app.import('vendor/gmu/widget/navigator/navigator.css');
+app.import('vendor/gmu/widget/navigator/navigator.default.css');
+
+
+
 
 module.exports = app.toTree();

@@ -1,3 +1,6 @@
+
+
+
 html, body {
 	height: 100%;
 }
@@ -168,7 +171,7 @@ input[type=checkbox], input[type=radio] {
 }
 .icon-logo:before {
 	content: "";
-	background: url("/mobile/images/molstr-icon.png") no-repeat;
+	background: url("/images/molstr-icon.png") no-repeat;
 	background-size: contain;
 	height: 100%;
 	display: block;
@@ -180,7 +183,7 @@ input[type=checkbox], input[type=radio] {
 }
 .icon-idcard:before {
 	content: "";
-	background: url("/mobile/images/idcard.png") no-repeat;
+	background: url("/images/idcard.png") no-repeat;
 	background-size: contain;
 	height: 20px;
 	display: block;
@@ -192,7 +195,7 @@ input[type=checkbox], input[type=radio] {
 }
 .icon-idcard2:before {
 	content: "";
-	background: url("/mobile/images/idcard2.png") no-repeat;
+	background: url("/images/idcard2.png") no-repeat;
 	background-size: contain;
 	height: 28px;
   display: block;
