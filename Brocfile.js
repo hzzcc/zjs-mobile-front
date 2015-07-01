@@ -2,7 +2,27 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-var app = new EmberApp();
+var app = new EmberApp({
+  minifyCSS: {
+    enabled: true
+  },
+  minifyJS: {
+    enabled: false
+  },
+  outputPaths: {
+    app: {
+      html: 'index.html',
+      css: {
+        'app': '/e_assets/qilebao.css'
+      },
+      js: '/e_assets/qilebao.js'
+    },
+    vendor: {
+      css: '/e_assets/vendor.css',
+      js: '/e_assets/vendor.js'
+    }
+  }
+});
 
 // Use `app.import` to add additional libraries to the generated
 // output files.

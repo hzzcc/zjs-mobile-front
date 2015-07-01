@@ -6,7 +6,7 @@ export default function() {
     Default config
   */
   this.namespace = '/api';    // make this `api`, for example, if your API is namespaced
-  this.timing = 1000;      // delay for each request, automatically set to 0 during testing
+  this.timing = 100;      // delay for each request, automatically set to 0 during testing
 
   /*
     Route shorthand cheatsheet
