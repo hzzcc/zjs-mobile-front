@@ -15,7 +15,6 @@ export default DS.Model.extend({
         return moment(_this.get('created_at')).format("YYYY/MM/DD");
     }.property('created_at'),
   typeColor: function() {
-      console.log('......',this.get('order_type'));
       if (this.get('order_type') === '看涨') {
         return 'type-red';
       }else {

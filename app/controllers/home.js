@@ -34,14 +34,33 @@ export default Ember.Controller.extend({
         _this.set('order.user', _this.user);
         _this.set('order.product', _this.model);
 
-        _this.order.save().then(function(model) {
-          console.log('secc');
-          _this.order = _this.store.createRecord('order');
-          alert('成功提交订单');
-        }, function(error) {
-          console.log('err');
-          alert('提交订单失败');
-        });
+
+        var post_data = {
+          quantity: _this.get('bet_times'),
+          price: _this.get('model.price'),
+          user_id: _this.user.get('id'),
+          product_id: _this.model.id,
+          order_type: _this.get('order.order_type')
+        };
+
+        Ember.$.ajax({
+                    url: '/' + config.NAMESPACE + '/products/' + _this.model.id + "/orders",
+                    type: 'post',
+                    dataType: 'json',
+                    data: JSON.stringify(post_data),
+                    processData: false,
+                    contentType: "application/json; charset=UTF-8",
+                    success: function (data) {
+                        _this.store.updateId(_this.order, data.order);
+                        console.log('secc');
+                        _this.order = _this.store.createRecord('order');
+                        alert('成功提交订单');
+                    },
+                    error: function (errors) {
+                      console.log('err');
+                      alert('提交订单失败');
+                    }
+                });
 
         _this.send('closeModal');
       }else {

@@ -33,7 +33,7 @@ var CustomAuthorizer = AuthorizerBase.extend({
 //            if ( requestOptions.type === "GET" ) {
 //                jqXHR.setRequestHeader('If-Modified-Since', 0);
 //            }
-            jqXHR.setRequestHeader('SECAuthorization', this.session.content.secure.user_token);
+            jqXHR.setRequestHeader('Authorization', 'Token token=' + this.session.content.secure.user_token + ',cell=' + this.session.content.secure.cell);
         }
     }
 });

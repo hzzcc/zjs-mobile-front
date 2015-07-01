@@ -12,7 +12,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
             var _this = this;
             credential.validate().then(function() {
                 credential.save().then(function(model) {
-                    _this.get('session').authenticate(_this.get('authenticator'), {user_token: model.get('token'), user_id: model.get('user').id } /*credential.toJSON()*/);
+                    _this.get('session').authenticate(_this.get('authenticator'), {user_token: model.get('token'), user_id: model.get('user').id, cell: model.get('user.cell') } /*credential.toJSON()*/);
                 }, function(error) {
                     _this.set('hasError', true);
 

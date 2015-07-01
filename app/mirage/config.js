@@ -59,6 +59,7 @@ export default function() {
     });
 
     this.get("/products/:id", function(db, request) {
+      console.log(request);
       return {
         product:  {
               id: 1,
@@ -125,7 +126,7 @@ export default function() {
       };
     });
 
-    this.get("/users/1/orders/index_by_user",function(db, request) {
+    this.get("/users/:id/orders/index_by_user",function(db, request) {
       return {
         'orders':  [
           {
@@ -249,6 +250,17 @@ export default function() {
     });
 
     this.post("/orders", function(db, request) {
+      var attrs = JSON.parse(request.requestBody);
+      console.log(attrs);
+      var newOrder = db.auths.insert(attrs);
+
+      return {
+        order:  newOrder
+      };
+    });
+
+
+    this.post("/products/:id/orders", function(db, request) {
       var attrs = JSON.parse(request.requestBody);
       console.log(attrs);
       var newOrder = db.auths.insert(attrs);
