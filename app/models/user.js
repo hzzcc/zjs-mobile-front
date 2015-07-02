@@ -24,7 +24,8 @@ export default DS.Model.extend(EmberValidations, {
       presence: { message: '密码不能为空' }
     },
     verification_code: {
-      presence: { message: '请填写验证码' }
+      presence: { message: '请填写验证码' },
+      length: { is: 6, messages: { wrongLength: '验证码错误'} }
     }
   }
 });
