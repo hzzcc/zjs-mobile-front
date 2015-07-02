@@ -79,6 +79,14 @@ export default Ember.Controller.extend({
         }
       });
   }.observes('model.cell'),
+  confirmPasswordChanged: function() {
+    if (this.model.get('passwordConfirmation') !== this.model.get('password')) {
+      _this.set('hasError', true);
+      _this.set('errorMsg', '两次填写密码不一致');
+    }else {
+      _this.set('hasError', false);
+    }
+  }.observes('model.passwordConfirmation','model.password'),
   actions: {
         register: function(user) {
             if (!user.get('agreed')) {
