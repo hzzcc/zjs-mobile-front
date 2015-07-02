@@ -2,8 +2,10 @@
   <ul class="nav-ver-list">
     {{#each billing in content}}
       <li class="nav-ver-item">
-        <div>{{billing.remark}} - {{billing.billing_type}} <span class="pull-right">{{billing.operator_str}}{{billing.amount}}</span> </div>
-        <div class="fs-sm light-gray">{{billing.created_time}} <span class="pull-right">{{billing.state.desc}}</span> </div>
+        <div class="item-content">
+          <div>{{billing.remark}} - {{billing.billing_type}} <span class="pull-right">{{billing.operator_str}}{{billing.amount}}</span> </div>
+          <div class="fs-sm light-gray">{{billing.created_time}} <span class="pull-right">{{billing.state.desc}}</span> </div>
+        </div>
       </li>
     {{/each}}
   </ul>

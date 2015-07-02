@@ -143,7 +143,6 @@ input[type=checkbox], input[type=radio] {
 }
 .nav-ver-item {
 	border-top: solid 1px #bbb;
-	padding: 15px 30px;
 	background: white;
 	display: table;
   width: 100%;
@@ -153,6 +152,10 @@ input[type=checkbox], input[type=radio] {
 }
 .nav-ver-item:last-child {
 	border-bottom: solid 1px #bbb;
+}
+
+.nav-ver-item .item-content {
+	padding: 15px 4% 15px 8%;
 }
 
 .fs18 {
@@ -494,7 +497,7 @@ a.color-inherit:hover {
 }
 
 .order-list .nav-ver-item .wp2 {
-	width: 32%;
+	width: 28%;
 	display: inline-block;
 }
 .order-list .nav-ver-item .wp3 {
@@ -513,4 +516,8 @@ a.color-inherit:hover {
 
 .type-blue {
 	color: #41BE68;
+}
+
+.right {
+	text-align: right;
 }
