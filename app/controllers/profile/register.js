@@ -80,6 +80,7 @@ export default Ember.Controller.extend({
       });
   }.observes('model.cell'),
   confirmPasswordChanged: function() {
+    var _this = this;
     if (this.model.get('passwordConfirmation') !== this.model.get('password')) {
       _this.set('hasError', true);
       _this.set('errorMsg', '两次填写密码不一致');

@@ -6,7 +6,7 @@ export default DS.Model.extend(EmberValidations, {
   cell: DS.attr(),
   password: DS.attr(),
   passwordConfirmation: DS.attr(),
-  username: DS.attr('string',{defaultValue: '你好！'}),
+  username: DS.attr(),
   id_card_number: DS.attr(),
   avatar: DS.attr(),
   agreed: DS.attr('boolean', {defaultValue: true}),
