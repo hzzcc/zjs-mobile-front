@@ -46,6 +46,7 @@ module.exports = function(environment) {
 
     ENV.rootURL = "/";
     ENV.routerLocation = 'hash';
+    ENV.locationType = 'hash';
   }
 
   if (environment === 'test') {
@@ -64,6 +65,7 @@ module.exports = function(environment) {
     // ENV.baseURL = '/mobile';
     ENV.rootURL = "/";
     ENV.routerLocation = 'hash';
+    ENV.locationType = 'hash';
   }
 
   return ENV;
