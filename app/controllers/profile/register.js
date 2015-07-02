@@ -4,6 +4,7 @@ import config from '../../config/environment';
 var canGet = true;
 var codeInterval = null;
 var codeCount = 60;
+var veri_code = 0;
 
 function setCheckDom(){
   codeCount -= 1;
@@ -26,27 +27,6 @@ function setCanGet(can){
     $("#getCheckCode").removeClass("btn-u-red");
     $("#getCheckCode").addClass("btn-u-default");
   }
-}
-function getCheckCode() {
-  $.ajax({
-    data: null,
-    url: '/' + config.NAMESPACE + "/users/send_code?cell=" + $("#user_cell").val(),
-    type: 'get',
-    contentType: false,
-    processData: false,
-    success: function (data) {
-      if (data.error) {
-        clearInterval(codeInterval);
-        canGet = true;
-        $("#getCheckCode").text("获取验证码");
-        setCanGet(true);
-        alert("发送验证码失败");
-      }
-    },
-    error: function () {
-
-    }
-  });
 }
 
 export default Ember.Controller.extend({
@@ -88,6 +68,18 @@ export default Ember.Controller.extend({
       _this.set('hasError', false);
     }
   }.observes('model.passwordConfirmation','model.password'),
+  codeInputChanged: function () {
+    var _this = this;
+    if (this.model.get('verification_code') === undefined || this.model.get('verification_code').length === 0) {
+      return;
+    }
+    if (this.model.get('verification_code') !== veri_code || this.model.get('verification_code') === 0) {
+      _this.set('hasError', true);
+      _this.set('errorMsg', '验证码错误');
+    }else {
+      _this.set('hasError', false);
+    }
+  }.observes('model.verification_code'),
   actions: {
         register: function(user) {
             if (!user.get('agreed')) {
@@ -98,7 +90,7 @@ export default Ember.Controller.extend({
             user.validate().then(function() {
                 user.set('profile_attributes',{city: null});
                 user.save().then(function (model) {
-                    _this.get('session').authenticate(_this.get('authenticator'), {user_token: model.get('authentication_token'),user_id: model.id, cell: model.get('user.cell')} /*credential.toJSON()*/);
+                    _this.get('session').authenticate(_this.get('authenticator'), {user_token: model.get('authentication_token'),user_id: model.id, cell: model.get('cell')} /*credential.toJSON()*/);
                     Em.debug('USER: ' + JSON.stringify(user.toJSON()));
                 }, function (error) {
                     _this.set('hasError', true);
@@ -129,6 +121,28 @@ export default Ember.Controller.extend({
             });
         },
         getCheckCode: function(){
+          var _this = this;
+
+          function getCheckCode() {
+            $.ajax({
+              data: null,
+              url: '/' + config.NAMESPACE + "/users/send_code?cell=" + $("#user_cell").val(),
+              type: 'get',
+              contentType: false,
+              processData: false,
+              success: function (data) {
+                veri_code = data.code;
+              },
+              error: function () {
+                clearInterval(codeInterval);
+                canGet = true;
+                $("#getCheckCode").text("获取验证码");
+                setCanGet(true);
+                alert("发送验证码失败");
+              }
+            });
+          }
+
           if ($("#user_cell").val().length !== 11) {
             alert("请正确填写手机号");
             return;

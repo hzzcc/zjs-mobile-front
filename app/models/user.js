@@ -17,10 +17,14 @@ export default DS.Model.extend(EmberValidations, {
   frost: DS.attr('number', {defaultValue: 0}),
   validations: {
     cell: {
-      presence: { message: '请输入您的手机号'}
+      presence: { message: '请输入您的手机号'},
+      length: {is: 11, messages: {wrongLength: '需填11位手机号码'}}
     },
     password: {
       presence: { message: '密码不能为空' }
+    },
+    verification_code: {
+      presence: { message: '请填写验证码' }
     }
   }
 });
