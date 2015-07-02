@@ -5,14 +5,11 @@ export default Ember.Controller.extend({
   nav_item_2: "",
   nav_item_3: "",
   actions: {
+    chargeTip: function () {
+      $('#chargeTipModal').show().addClass('in');
+    },
     toCharge: function () {
-      $('#chargeModal').show().addClass('in');
-    },
-    closeModal:function () {
-      $('#chargeModal').removeClass('in').hide();
-    },
-    confirm: function () {
-      // body...
+      $('#chargeTipModal').removeClass('in').hide();
     }
   }
 });

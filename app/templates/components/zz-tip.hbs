@@ -1,0 +1,17 @@
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="{{modal_name}}ModalLabel" id="{{modal_name}}Modal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="{{modal_name}}ModalLabel">{{tipTitle}}</h4>
+      </div>
+      <div class="modal-body">
+        {{yield}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-u btn-u-md rounded-2x btn-u-red " {{action 'confirm'}}>确认</button>
+        <button type="button" class="btn-u btn-u-md rounded-2x btn-u-default " data-dismiss="modal" {{action 'closeModal'}}>取消</button>
+      </div>
+    </div>
+  </div>
+</div>

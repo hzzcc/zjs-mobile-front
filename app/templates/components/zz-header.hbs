@@ -5,7 +5,7 @@
   <h2>{{toolbar_name}}</h2>
   {{#if toolbar_logout}}
     {{#if session.isAuthenticated}}
-      <a {{ action 'invalidateSession' }} class="black logout-btn">退出</a>
+      <a {{ action 'logout' }} class="black logout-btn">退出</a>
     {{/if}}
   {{/if}}
   {{#if toolbar_login}}

@@ -3,9 +3,10 @@ import Ember from 'ember';
 import config from '../config/environment';
 
 export default Ember.Controller.extend({
-  
-  bet_times: 1,
 
+  bet_times: 1,
+  needs: 'application',
+  application: Ember.computed.alias("controllers.application"),
   total_pay: function () {
     return this.bet_times * this.get('model.price');
   }.property('bet_times', 'model.price'),
@@ -30,7 +31,7 @@ export default Ember.Controller.extend({
 
         if (_this.get('user.balance') < _this.get('total_pay')) {
           _this.send('closeModal');
-          alert('余额不足，是否充值');
+          _this.get('application').send('chargeTip');
           return;
         }
 
