@@ -3,10 +3,9 @@ import Ember from 'ember';
 import config from '../config/environment';
 
 export default Ember.Controller.extend({
-  toolbar_name: "交易",
-  toolbar_back_show: false,
-  toolbar_login: true,
+  
   bet_times: 1,
+
   total_pay: function () {
     return this.bet_times * this.get('model.price');
   }.property('bet_times', 'model.price'),
@@ -28,6 +27,13 @@ export default Ember.Controller.extend({
     confirm: function() {
       var _this = this;
       if (_this.session.isAuthenticated){
+
+        if (_this.get('user.balance') < _this.get('total_pay')) {
+          _this.send('closeModal');
+          alert('余额不足，是否充值');
+          return;
+        }
+
         _this.set('order.quantity', _this.get('bet_times'));
         _this.set('order.price', _this.get('model.price'));
         _this.set('user.balance', _this.get('user.balance') - _this.get('total_pay'));

@@ -1,4 +1,4 @@
-{{partial "components/header"}}
+{{zz-header toolbar_back_show=false toolbar_name="个人中心" toolbar_logout=true}}
 
 <div class="content-wrap">
   <div class="row bg-red pb20">
@@ -43,12 +43,12 @@
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active">
           {{#link-to 'protected.user.billing'}}
-            投资记录
+            充值记录
           {{/link-to}}
         </li>
         <li role="presentation">
           {{#link-to 'protected.user.order'}}
-            押宝纪录
+            交易记录
           {{/link-to}}
         </li>
         <li role="presentation">
@@ -72,7 +72,6 @@
       </div>
     </div>
 
-
-
   </div>
 </div>
+{{zz-footer nav_item_1=false nav_item_2=false nav_item_3=true}}

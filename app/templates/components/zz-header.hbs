@@ -1,0 +1,16 @@
+<div id="J_toolbar">
+  {{#if toolbar_back_show}}
+    {{#link-to toolbar_back_url }}<i class="fa fa-chevron-left"></i>{{/link-to}}
+  {{/if}}
+  <h2>{{toolbar_name}}</h2>
+  {{#if toolbar_logout}}
+    {{#if session.isAuthenticated}}
+      <a {{ action 'invalidateSession' }} class="black logout-btn">退出</a>
+    {{/if}}
+  {{/if}}
+  {{#if toolbar_login}}
+    {{#unless session.isAuthenticated}}
+      {{#link-to 'profile.login' class="black logout-btn"}}未登录{{/link-to}}
+    {{/unless}}
+  {{/if}}
+</div>

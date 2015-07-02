@@ -6,16 +6,15 @@ export default DS.Model.extend(EmberValidations, {
   cell: DS.attr(),
   password: DS.attr(),
   passwordConfirmation: DS.attr(),
-  username: DS.attr(),
-  real_name: DS.attr(),
+  username: DS.attr('string',{defaultValue: '你好！'}),
   id_card_number: DS.attr(),
   avatar: DS.attr(),
   agreed: DS.attr('boolean', {defaultValue: true}),
   authentication_token: DS.attr(),
   verification_code: DS.attr(),
   level: DS.attr(),
-  balance: DS.attr(),
-  frost: DS.attr(),
+  balance: DS.attr('number', {defaultValue: 0}),
+  frost: DS.attr('number', {defaultValue: 0}),
   validations: {
     cell: {
       presence: { message: '请输入您的手机号'}

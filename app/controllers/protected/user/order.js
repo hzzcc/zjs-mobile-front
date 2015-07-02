@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import BillingStates from 'my-test/transforms/billing-state';
+import BillingStates from 'qilebao/transforms/billing-state';
 
 export default Ember.Controller.extend({
 

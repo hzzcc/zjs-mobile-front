@@ -30,13 +30,12 @@ export default function() {
         user:  {
               id: 1,
               cell: 1232134,
-              username: 'sbsbsbsbsb',
+              // username: 'sbsbsbsbsb',
               email: 'hasjdg@qq.com',
               avatar: {url: 'images/user.jpg'},
-              real_name: "Dell",
               created_at: "2013-7-4",
-              balance: 222222,
-              frost: 333333
+              // balance: 222222,
+              // frost: 333333
           }
       };
     });
@@ -47,16 +46,6 @@ export default function() {
     // });
     this.get("/users/check_cell_uniqueness", {message:  "手机号已被注册"}, 422);
     this.get("/users/check_username_uniqueness", {message:  "该昵称已被使用"}, 422);
-
-    this.get("/users/account", function(db, request) {
-      return {
-        account:  {
-              id: 1,
-              balance: 121323,
-              frost: 34122
-          }
-      };
-    });
 
     this.get("/products/:id", function(db, request) {
       console.log(request);
@@ -169,13 +158,12 @@ export default function() {
                   {
                       id: 1,
                       cell: 1232134,
-                      username: 'sbsbsbsbsb',
+                      // username: 'sbsbsbsbsb',
                       email: 'hasjdg@qq.com',
                       avatar: {url: 'images/user.jpg'},
-                      real_name: "Dell",
                       created_at: "2013-7-4",
-                      balance: 222222,
-                      frost: 333333
+                      // balance: 222222,
+                      // frost: 333333
                   }
               ]
           };
@@ -194,13 +182,12 @@ export default function() {
                   {
                     id: 1,
                     cell: 1232134,
-                    username: 'sbsbsbsbsb',
+                    // username: 'sbsbsbsbsb',
                     email: 'hasjdg@qq.com',
                     avatar: {url: 'images/user.jpg'},
-                    real_name: "Dell",
                     created_at: "2013-7-4",
-                    balance: 222222,
-                    frost: 333333
+                    // balance: 222222,
+                    // frost: 333333
                   }
               ]
           };
@@ -215,13 +202,12 @@ export default function() {
         user:  {
               id: 1,
               cell: 1232134,
-              username: 'sbsbsbsbsb',
+              // username: 'sbsbsbsbsb',
               email: 'hasjdg@qq.com',
               avatar: {url: 'images/user.jpg'},
-              real_name: "Dell",
               created_at: "2013-7-4",
-              balance: 222222,
-              frost: 333333
+              // balance: 222222,
+              // frost: 333333
           }
       };
     });

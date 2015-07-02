@@ -32,9 +32,5 @@ export default Router.map(function() {
     this.route('cashout');
   });
 
-  this.route('invest', function() {
-    this.route('show');
-  });
-
   this.route('contact_us');
 });

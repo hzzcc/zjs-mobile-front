@@ -1,4 +1,20 @@
 <div class="container">
     {{outlet}}
 </div>
-{{partial "components/footer"}}
+
+<div class="modal fade charge-modal" tabindex="-1" role="dialog" aria-labelledby="chargeModalLabel" id="chargeModal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="chargeModalLabel">确认充值</h4>
+      </div>
+      <div class="modal-body">
+        您的账户余额不足，是否充值？
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-u btn-u-md rounded-2x btn-u-red " {{action 'confirm'}}>确认</button>
+        <button type="button" class="btn-u btn-u-md rounded-2x btn-u-default " data-dismiss="modal" {{action 'closeModal'}}>取消</button>
+      </div>
+    </div>
+  </div>
+</div>

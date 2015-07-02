@@ -1,4 +1,4 @@
-import MappingTransformMixin from 'my-test/transforms/mapping-transform-mixin';
+import MappingTransformMixin from 'qilebao/transforms/mapping-transform-mixin';
 export default DS.Transform.extend(MappingTransformMixin, {
     mapping: [
         {index: 'pending', desc: '待定'},

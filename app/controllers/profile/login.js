@@ -4,9 +4,7 @@ import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin';
 
 export default Ember.Controller.extend(LoginControllerMixin, {
   authenticator: 'authenticator:custom',
-  toolbar_name: "登陆",
-  toolbar_back_show: true,
-  toolbar_back_url: "home",
+  
   actions: {
         login: function(credential) {
             var _this = this;

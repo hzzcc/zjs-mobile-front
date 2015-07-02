@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'my-test',
+    modulePrefix: 'qilebao',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',

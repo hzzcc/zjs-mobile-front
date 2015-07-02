@@ -1,9 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  toolbar_name: "充值",
-  toolbar_back_show: true,
-  toolbar_back_url: "protected.user.billing",
+
   actions: {
     cashin: function (modl) {
       var _this = this;
