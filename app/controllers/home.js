@@ -10,6 +10,17 @@ export default Ember.Controller.extend({
   total_pay: function () {
     return this.bet_times * this.get('model.price');
   }.property('bet_times', 'model.price'),
+  pro_type: function () {
+    if (this.bet_times === 1){
+      return '方案A';
+    }else if (this.bet_times === 2) {
+      return '方案B';
+    }else if (this.bet_times === 5) {
+      return '方案C';
+    }else if (this.bet_times === 10) {
+      return '方案D';
+    }
+  }.property('bet_times'),
   actions: {
     select: function (bet) {
       $('.bet-item-box').removeClass('active');
