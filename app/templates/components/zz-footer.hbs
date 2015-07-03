@@ -1,22 +1,26 @@
-<div id="nav">
-  <ul>
-    <li {{bind-attr class="nav_item_1:ui-state-active"}}>
-      {{#link-to "contact_us"}}
-        <i class="glyphicon glyphicon-earphone"></i> 联系我们
-      {{/link-to}}
-    </li>
+<div id="nav" class="ui-navigator" style="overflow: hidden;">
+  <div class="ui-scroller" style="-webkit-transition-property: -webkit-transform; transition-property: -webkit-transform; -webkit-transform-origin: 0px 0px 0px; -webkit-transform: translate(0px, 0px) translateZ(0px);">
+    <div class="ui-scroller">
+      <ul class="ui-navigator-list" style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0);">
+        <li {{bind-attr class="nav_item_1:ui-state-active"}}>
+          {{#link-to "contact_us"}}
+            <i class="glyphicon glyphicon-earphone"></i> 联系我们
+          {{/link-to}}
+        </li>
 
-    <li {{bind-attr class="nav_item_2:ui-state-active"}}>
-      {{#link-to "home"}}
-        <i class="glyphicon glyphicon-home"></i> 交易
-        {{/link-to}}
-    </li>
+        <li {{bind-attr class="nav_item_2:ui-state-active"}}>
+          {{#link-to "home"}}
+            <i class="glyphicon glyphicon-home"></i> 交易
+            {{/link-to}}
+        </li>
 
-    <li {{bind-attr class="nav_item_3:ui-state-active"}}>
-      {{#link-to "protected.user.billing"}}
-        <i class="glyphicon glyphicon-user"></i> 个人中心
-      {{/link-to}}
-    </li>
+        <li {{bind-attr class="nav_item_3:ui-state-active"}}>
+          {{#link-to "protected.user.billing"}}
+            <i class="glyphicon glyphicon-user"></i> 个人中心
+          {{/link-to}}
+        </li>
 
-  </ul>
+      </ul>
+    </div>
+  </div>
 </div>

@@ -1,16 +1,22 @@
-<div id="J_toolbar">
-  {{#if toolbar_back_show}}
-    {{#link-to toolbar_back_url }}<i class="fa fa-chevron-left"></i>{{/link-to}}
-  {{/if}}
-  <h2>{{toolbar_name}}</h2>
-  {{#if toolbar_logout}}
-    {{#if session.isAuthenticated}}
-      <a {{ action 'logout' }} class="black logout-btn">退出</a>
-    {{/if}}
-  {{/if}}
-  {{#if toolbar_login}}
-    {{#unless session.isAuthenticated}}
-      {{#link-to 'profile.login' class="black logout-btn"}}未登录{{/link-to}}
-    {{/unless}}
-  {{/if}}
+<div id="J_toolbar" class="ui-toolbar">
+  <div class="ui-toolbar-wrap">
+    <div class="ui-toolbar-left">
+      {{#if toolbar_back_show}}
+        {{#link-to toolbar_back_url class='ui-toolbar-button' }}<i class="fa fa-chevron-left"></i>{{/link-to}}
+      {{/if}}
+    </div>
+    <h2 class="ui-toolbar-title">{{toolbar_name}}</h2>
+    <div class="ui-toolbar-right">
+      {{#if toolbar_logout}}
+        {{#if session.isAuthenticated}}
+          <a {{ action 'logout' }} class="black logout-btn">退出</a>
+        {{/if}}
+      {{/if}}
+      {{#if toolbar_login}}
+        {{#unless session.isAuthenticated}}
+          {{#link-to 'profile.login' class="black logout-btn"}}未登录{{/link-to}}
+        {{/unless}}
+      {{/if}}
+    </div>
+  </div>
 </div>
