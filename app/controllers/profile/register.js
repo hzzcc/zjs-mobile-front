@@ -48,19 +48,23 @@ export default Ember.Controller.extend({
   cellChanged: function() {
     var _this = this;
     if (this.model.get('cell') === undefined || this.model.get('cell').length != 11) {
+
       return;
     }
     Ember.$.getJSON('/' + config.NAMESPACE + '/users/check_cell_uniqueness?cell=' + this.model.get('cell')).then(function(){
+
         _this.set('hasError', false);
       },function(errors){
         if (errors.status === 422) {
           _this.set('hasError', true);
+          _this.set('cell_uniq', false);
           _this.set('errorMsg', errors.responseJSON.message);
         }
       });
   }.observes('model.cell'),
   confirmPasswordChanged: function() {
     var _this = this;
+
     if (this.model.get('passwordConfirmation') !== this.model.get('password')) {
       _this.set('hasError', true);
       _this.set('errorMsg', '两次填写密码不一致');
@@ -87,8 +91,29 @@ export default Ember.Controller.extend({
               return;
             }
             var _this = this;
+
             user.validate().then(function() {
-                user.set('profile_attributes',{city: null});
+
+
+              if (_this.get('cell_uniq') === false) {
+                _this.set('hasError', true);
+                _this.set('errorMsg', '手机号已被注册');
+                return;
+              }
+
+
+              if (user.get('passwordConfirmation') !== user.get('password')) {
+                _this.set('hasError', true);
+                _this.set('errorMsg', '两次填写密码不一致');
+                return;
+              }
+
+              if (user.get('verification_code') !== veri_code || user.get('verification_code') === 0) {
+                _this.set('hasError', true);
+                _this.set('errorMsg', '验证码错误');
+                return;
+              }
+
                 user.save().then(function (model) {
                     _this.get('session').authenticate(_this.get('authenticator'), {user_token: model.get('authentication_token'),user_id: model.id, cell: model.get('cell')} /*credential.toJSON()*/);
                     Em.debug('USER: ' + JSON.stringify(user.toJSON()));

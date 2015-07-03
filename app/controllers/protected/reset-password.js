@@ -14,6 +14,12 @@ export default Ember.Controller.extend({
     resetPassword: function(credential) {
       var _this = this;
 
+      if (this.model.get('confirm_password') !== this.model.get('password')) {
+        this.set('hasError', true);
+        this.set('errorMsg', '两次填写密码不一致');
+        return;
+      }
+
       credential.validate().then(function() {
         var post_data = JSON.stringify(_this.model);
 
@@ -30,17 +36,9 @@ export default Ember.Controller.extend({
                       _this.transitionToRoute('protected.user.safe-setting');
                     },
                     error: function (error) {
-                      error = error.responseJSON;
                       _this.set('hasError', true);
-                      var errorMessage;
-                      for (var i in error.errors){
-                          for (var j=0;j< error.errors[i].length; j++){
-                              errorMessage = error.errors[i][j];
-                              break;
-                          }
-                          break;
-                      }
-                      _this.set('errorMsg', errorMessage);
+
+                      _this.set('errorMsg', '当前密码错误，修改失败');
                     }
                 });
       }, function() {

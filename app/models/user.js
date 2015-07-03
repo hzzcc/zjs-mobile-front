@@ -21,11 +21,11 @@ export default DS.Model.extend(EmberValidations, {
       length: {is: 11, messages: {wrongLength: '需填11位手机号码'}}
     },
     password: {
-      presence: { message: '密码不能为空' }
+      presence: { message: '密码不能为空' },
+      length: { minimum: 6, maximum: 12, messages: { tooShort: '密码必须大于6个字符', tooLong: '密码必须小于12个字符' } }
     },
     verification_code: {
-      presence: { message: '请填写验证码' },
-      length: { is: 6, messages: { wrongLength: '验证码错误'} }
+      presence: { message: '请填写验证码' }
     }
   }
 });
