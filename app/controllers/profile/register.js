@@ -94,7 +94,6 @@ export default Ember.Controller.extend({
 
             user.validate().then(function() {
 
-
               if (_this.get('cell_uniq') === false) {
                 _this.set('hasError', true);
                 _this.set('errorMsg', '手机号已被注册');
@@ -108,7 +107,7 @@ export default Ember.Controller.extend({
                 return;
               }
 
-              if (user.get('verification_code') !== _this.get('veri_code') || user.get('verification_code') === 0) {
+              if (user.get('verification_code') !== _this.get('veri_code').toString() || user.get('verification_code') === 0) {
                 _this.set('hasError', true);
                 _this.set('errorMsg', '验证码错误');
                 return;
