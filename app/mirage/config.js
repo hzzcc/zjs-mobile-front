@@ -39,6 +39,13 @@ export default function() {
           }
       };
     });
+
+    this.get("/users/send_code", function(db, request) {
+      console.log('get user info');
+      return {
+        code: 1203123
+      };
+    });
     // this.get("/users/check_cell_uniqueness", function(db, request) {
     //   return {
     //     message:  "手机号还未被注册"
