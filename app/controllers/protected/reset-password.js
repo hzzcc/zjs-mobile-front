@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
     }else {
       this.set('hasError', false);
     }
-  }.observes('model.confirm_password','model.password'),
+  }.observes('model.confirm_password'),
   actions: {
     resetPassword: function(credential) {
       var _this = this;

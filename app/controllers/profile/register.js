@@ -4,7 +4,6 @@ import config from '../../config/environment';
 var canGet = true;
 var codeInterval = null;
 var codeCount = 60;
-var veri_code = 0;
 
 function setCheckDom(){
   codeCount -= 1;
@@ -71,19 +70,20 @@ export default Ember.Controller.extend({
     }else {
       _this.set('hasError', false);
     }
-  }.observes('model.passwordConfirmation','model.password'),
+  }.observes('model.passwordConfirmation'),
   codeInputChanged: function () {
     var _this = this;
     if (this.model.get('verification_code') === undefined || this.model.get('verification_code').length === 0) {
       return;
     }
-    if (this.model.get('verification_code') !== veri_code || this.model.get('verification_code') === 0) {
+    if (this.model.get('verification_code') !== _this.get('veri_code') || this.model.get('verification_code') === 0) {
       _this.set('hasError', true);
       _this.set('errorMsg', '验证码错误');
     }else {
       _this.set('hasError', false);
     }
   }.observes('model.verification_code'),
+  veri_code: 0,
   actions: {
         register: function(user) {
             if (!user.get('agreed')) {
@@ -108,7 +108,7 @@ export default Ember.Controller.extend({
                 return;
               }
 
-              if (user.get('verification_code') !== veri_code || user.get('verification_code') === 0) {
+              if (user.get('verification_code') !== _this.get('veri_code') || user.get('verification_code') === 0) {
                 _this.set('hasError', true);
                 _this.set('errorMsg', '验证码错误');
                 return;
@@ -156,7 +156,7 @@ export default Ember.Controller.extend({
               contentType: false,
               processData: false,
               success: function (data) {
-                veri_code = data.code;
+                _this.set('veri_code', data.code);
               },
               error: function () {
                 clearInterval(codeInterval);
