@@ -38,7 +38,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
     //for rails test
-    // ENV.baseURL = '/mobile';
+    ENV.baseURL = '/mobile';
     ENV['ember-cli-mirage'] = {
       // enabled: false
     }
@@ -46,7 +46,7 @@ module.exports = function(environment) {
 
     ENV.rootURL = "/";
     ENV.routerLocation = 'hash';
-    ENV.locationType = 'hash';
+    // ENV.locationType = 'hash';
   }
 
   if (environment === 'test') {
@@ -62,10 +62,10 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    // ENV.baseURL = '/mobile';
+    ENV.baseURL = '/mobile';
     ENV.rootURL = "/";
     ENV.routerLocation = 'hash';
-    ENV.locationType = 'hash';
+    // ENV.locationType = 'hash';
   }
 
   return ENV;
