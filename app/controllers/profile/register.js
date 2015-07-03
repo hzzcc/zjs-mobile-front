@@ -52,7 +52,7 @@ export default Ember.Controller.extend({
       return;
     }
     Ember.$.getJSON('/' + config.NAMESPACE + '/users/check_cell_uniqueness?cell=' + this.model.get('cell')).then(function(){
-
+      _this.set('cell_uniq', true);
         _this.set('hasError', false);
       },function(errors){
         if (errors.status === 422) {
