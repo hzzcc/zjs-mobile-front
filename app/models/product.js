@@ -9,6 +9,6 @@ export default DS.Model.extend({
   formate_date: function(){
         var _this = this;
         moment.locale('zh-cn');
-        return moment(_this.get('date')).format("YYYY/M/D");
+        return moment((new Date(_this.get('date'))).toISOString()).format("YYYY/M/D");
     }.property('date')
 });

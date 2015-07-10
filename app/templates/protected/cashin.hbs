@@ -6,7 +6,7 @@
       账户余额：<span class="red">{{user.balance}}</span> 元
     </div>
     <form {{action 'cashin' this on='submit'}}  method="post" class="mt20" id="cashin_form">
-      <div {{bind-attr class=":alert :alert-danger hasError::hidden"}}>
+      <div class="alert alert-danger {{unless hasError 'hidden'}}">
         <i class="fa fa-warning"></i>
         <span>{{this.errorMsg}}</span>
       </div>

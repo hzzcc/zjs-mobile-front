@@ -7,7 +7,7 @@
       <span class="wp3 bold center">日期</span>
       <span class="wp4 bold right">收益（元）</span>
     </li>
-    {{#each order in content}}
+    {{#each content as |order| }}
       <li class="nav-ver-item">
         <div class="item-content">
           <span class="wp1 {{order.typeColor}}">{{order.order_type}}</span>

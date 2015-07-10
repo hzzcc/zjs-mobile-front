@@ -1,6 +1,6 @@
 {{#if content.length}}
   <ul class="nav-ver-list">
-    {{#each billing in content}}
+    {{#each content as |billing|}}
       <li class="nav-ver-item">
         <div class="item-content">
           <div>{{billing.remark}} - {{billing.billing_type}} <span class="pull-right">{{billing.operator_str}}{{billing.amount}}</span> </div>

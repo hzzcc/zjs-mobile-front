@@ -3,14 +3,14 @@
     "document",
     "window",
     "-Promise",
-    "location",
-    "setTimeout",
     "Ember",
     "Em",
-    "DS",
     "$",
+    "location",
+    "setTimeout",
+    "DS",
     "SimpleAuth",
-    "gmu"
+    "moment"
   ],
   "browser": true,
   "boss": true,
