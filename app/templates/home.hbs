@@ -2,33 +2,93 @@
 
 <div class="content-wrap">
   <h3 class="center mt30">
-    期乐宝对冲方案
+    {{model.name}}
   </h3>
 
-  <div class="row mt20 center">
+  <div class="row mt20">
+
+    <div class="col-md-12">
+      <div class="bg-white table-width-all">
+        <table cellpadding="0" id="table-box-futures-hq" class="table" cellspacing="0" width="100%">
+					<tbody>
+						<tr>
+							<td rowspan="4" class="border-right">
+								<div class="{{hq_str.color}}">
+									<span class="real-price price {{hq_str.color}}">{{hq_str.price}}</span><span class="arrow"></span>
+									<p class="change-wrap"><span class="amt-value">{{hq_str.amt_value}}</span> <span class="amt">{{hq_str.amt}}</span></p>
+								</div>
+								<p class="trade-time time">{{hq_str.trade_time}} {{hq_str.time}}</p>
+							</td>
+              <th>
+                开盘价:
+							</th>
+              <td class="open-price">{{hq_str.open_price}}</td>
+              <th>
+                昨结算:
+							</th>
+              <td class="yestoday-price">{{hq_str.yestoday_price}}</td>
+
+            </tr>
+						<tr>
+              <th>
+                最高价:
+							</th>
+              <td class="max-price">{{hq_str.max_price}}</td>
+
+              <th>
+                持仓量:
+							</th>
+              <td class="amount">{{hq_str.amount}}</td>
+
+            </tr>
+						<tr>
+              <th>
+                最低价:
+							</th>
+              <td class="min-price">{{hq_str.min_price}}</td>
+              <th>
+                成交量:
+							</th>
+              <td class="volume">{{hq_str.volume}}</td>
+            </tr>
+            <tr>
+
+              <th>
+                最新价:
+							</th>
+              <td class="price {{hq_str.color}}">{{hq_str.price}}</td>
+            </tr>
+					</tbody>
+				</table>
+      </div>
+      <img src="http://hqzwpic.eastmoney.com/K/0003001KD.png" alt='沪深300股指日k图' width="100%" />
+    </div>
+  </div>
+
+  <div class="row mt30 center">
     <div class="col-md-12">
       <div class="col-xs-3">
         <div class="bet-item-box active">
           <input type="radio" name="bet-times" id='bet-times-1' value="1" {{action 'select' 1}}>
-          <h3>方案A</h3>
+          <h3>1手</h3>
         </div>
       </div>
       <div class="col-xs-3">
         <div class="bet-item-box">
           <input type="radio" name="bet-times" id='bet-times-2' value="2" {{action 'select' 2}}>
-          <h3>方案B</h3>
+          <h3>2手</h3>
         </div>
       </div>
       <div class="col-xs-3">
         <div class="bet-item-box">
           <input type="radio" name="bet-times" id='bet-times-5' value="5" {{action 'select' 5}}>
-          <h3>方案C</h3>
+          <h3>5手</h3>
         </div>
       </div>
       <div class="col-xs-3">
         <div class="bet-item-box">
           <input type="radio" name="bet-times" id='bet-times-10' value="10" {{action 'select' 10}}>
-          <h3>方案D</h3>
+          <h3>10手</h3>
         </div>
       </div>
     </div>
@@ -37,7 +97,7 @@
   <div class="row">
     <div class="col-md-12 mt15 fs18 ltr-spc-0">
       <div class="col-xs-7">
-        方案价格为<span class="bold red">{{total_pay}}</span>元
+        每手单价为<span class="bold red">{{model.price}}</span>元
       </div>
       <div class="col-xs-5 align-right">
         {{model.formate_date}}
@@ -48,12 +108,11 @@
   <div class="row">
     <div class="col-md-12 mt15">
       <div class="col-xs-6">
-        <button class="btn-u btn-u-lg rounded-2x btn-u-red bet-button" {{action 'bet' '看涨'}}>空头对冲<span class="ret-up"></span></button>
-
+                <button class="btn-u btn-u-lg rounded-2x btn-u-red bet-button" {{action 'bet' '看涨'}}>看涨<span class="ret-up"></span></button>
       </div>
 
       <div class="col-xs-6 align-right">
-        <button class="btn-u btn-u-lg rounded-2x btn-u-sea bet-button"  {{action 'bet' '看跌'}}>多头对冲<span class="ret-down"></span></button>
+                <button class="btn-u btn-u-lg rounded-2x btn-u-sea bet-button"  {{action 'bet' '看跌'}}>看跌<span class="ret-down"></span></button>
 
       </div>
     </div>
@@ -65,12 +124,12 @@
         <div class="bet-des border-dot">
           <h3>买卖时间：</h3>
           <p>T日16:00－－T+1日9:00</p>
-          <!-- <h3>方案策略：</h3>
-          <p>股指IF近月合约</p> -->
-          <!-- <h3>收益：</h3>
+          <h3>对应标的：</h3>
+          <p>股指IF近月合约</p>
+          <h3>收益：</h3>
           <p>收盘价－开盘价（看涨），开盘价－收盘价（看跌）</p>
           <h3>最高收益：</h3>
-          <p>看对方向最高可达10倍</p> -->
+          <p>看对方向最高可达10倍</p>
         </div>
       </div>
     </div>
@@ -88,12 +147,15 @@
         <div>
          <span class="bold">名称：</span> 期乐宝对冲方案
        </div>
+       <div>
+          <span class="bold">单价：</span> {{model.price}}元
+        </div>
 
         <div>
-          <span class="bold">方案：</span> {{pro_type}}
+          <span class="bold">手数：</span> {{this.bet_times}}手
         </div>
         <div>
-          <span class="bold">价格：</span> {{total_pay}}元
+          <span class="bold">总金额：</span> {{total_pay}}元
         </div>
 
         <div>

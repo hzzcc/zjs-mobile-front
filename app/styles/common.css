@@ -174,7 +174,7 @@ input[type=checkbox], input[type=radio] {
 }
 .icon-logo:before {
 	content: "";
-	background: url("/images/molstr-icon.png") no-repeat;
+	background: url("../images/molstr-icon.png") no-repeat;
 	background-size: contain;
 	height: 100%;
 	display: block;
@@ -186,7 +186,7 @@ input[type=checkbox], input[type=radio] {
 }
 .icon-idcard:before {
 	content: "";
-	background: url("/images/idcard.png") no-repeat;
+	background: url("../images/idcard.png") no-repeat;
 	background-size: contain;
 	height: 20px;
 	display: block;
@@ -198,7 +198,7 @@ input[type=checkbox], input[type=radio] {
 }
 .icon-idcard2:before {
 	content: "";
-	background: url("/images/idcard2.png") no-repeat;
+	background: url("../images/idcard2.png") no-repeat;
 	background-size: contain;
 	height: 28px;
   display: block;
@@ -544,4 +544,70 @@ a.color-inherit:hover {
 
 .tap_high {
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+#table-box-futures-hq td {
+	  color: #005CBF;
+}
+
+#table-box-futures-hq .green {
+  color: green;
+}
+#table-box-futures-hq .red{
+	color:red;
+}
+
+table#table-box-futures-hq {
+  font-size: 12px;
+	margin-bottom: 6px;
+}
+
+#table-box-futures-hq .real-price {
+  float: left;
+  font-size: 26px;
+  height: 44px;
+  line-height: 50px;
+  text-align: right;
+  vertical-align: middle;
+	padding-left: 6px;
+}
+#table-box-futures-hq .trade-time {
+	clear: both;
+	border-top: 1px solid #dae3ea;
+	color: #585858;
+	text-align: center;
+	margin-top: 8px;
+	padding-top: 4px;
+}
+
+#table-box-futures-hq .arrow{
+	display: inline-block;
+  font-family: Arial;
+	background:url('../images/arrow.gif') no-repeat 0 -40px;
+	width:21px;
+	height:36px;
+	margin-left:4px;
+}
+#table-box-futures-hq .red .arrow{
+	background-position: 0 0;
+}
+
+#table-box-futures-hq .change-wrap {
+	text-align: center;
+}
+
+#table-box-futures-hq span.amt-value {
+	padding-right: 6px;
+}
+
+#table-box-futures-hq.table > thead > tr > th, #table-box-futures-hq.table > tbody > tr > th, #table-box-futures-hq.table > tfoot > tr > th, #table-box-futures-hq.table > thead > tr > td, #table-box-futures-hq.table > tbody > tr > td, #table-box-futures-hq.table > tfoot > tr > td {
+  padding: 4px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: none;
+}
+
+.table-width-all {
+	display: table;
+	width: 100%;
 }

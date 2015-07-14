@@ -30,6 +30,15 @@ module.exports = function(environment) {
   }
   ENV.NAMESPACE = "api";
 
+  ENV.contentSecurityPolicy = {
+    'default-src': "'none'",
+    'script-src': "'self' http://hq.sinajs.cn",
+    'font-src': "'self'",
+    'connect-src': "'self'",
+    'img-src': "'self' *",
+    'style-src': "'self' 'unsafe-inline'",
+    'media-src': "'self'"
+  }
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -48,6 +57,7 @@ module.exports = function(environment) {
     ENV.rootURL = "/";
     ENV.routerLocation = 'hash';
     // ENV.locationType = 'hash';
+    ENV.contentSecurityPolicy['script-src'] = ENV.contentSecurityPolicy['script-src'] + " 'unsafe-eval'";
   }
 
   if (environment === 'test') {

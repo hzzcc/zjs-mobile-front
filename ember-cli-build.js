@@ -8,19 +8,19 @@ module.exports = function(defaults) {
       enabled: true
     },
     minifyJS: {
-      enabled: false
+      enabled: true
     },
     outputPaths: {
       app: {
         html: 'index.html',
         css: {
-          'app': '/e_assets/qilebao.css'
+          'app': '/assets/qilebao.css'
         },
-        js: '/e_assets/qilebao.js'
+        js: '/assets/qilebao.js'
       },
       vendor: {
-        css: '/e_assets/vendor.css',
-        js: '/e_assets/vendor.js'
+        css: '/assets/vendor.css',
+        js: '/assets/vendor.js'
       }
     }
 
