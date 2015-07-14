@@ -33,4 +33,8 @@ export default Router.map(function() {
   });
 
   this.route('contact_us');
+  this.route('about-us');
+  this.route('about-company');
+  this.route('our-team');
+  this.route('business-model');
 });

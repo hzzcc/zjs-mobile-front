@@ -158,6 +158,10 @@ input[type=checkbox], input[type=radio] {
 	padding: 15px 4% 15px 8%;
 }
 
+.nav-ver-item.border-bottom {
+	border-bottom: 1px solid #bbb;
+}
+
 .fs18 {
 	font-size: 18px;
 }
@@ -616,4 +620,25 @@ table#table-box-futures-hq {
 
 .hq_lf_box {
 	width: 128px;
+}
+
+.text-indent-2 {
+	text-indent: 2em;
+}
+
+.logo-des {
+	 margin-top: 20px;font-size: 12px; padding: 0px; border-radius: 0px; border-width: 0px; border-style: solid; text-align: center; line-height: 17px; z-index: 5; font-weight: normal; font-style: normal; color: rgb(170, 170, 170); box-shadow: rgb(170, 170, 170) 0px 0px 0px; opacity: 1; transform: rotate(0deg); -webkit-transform: rotate(0deg);
+}
+
+p {
+	  line-height: 1.8em;
+}
+
+p.user-info {
+	font-size: 12px;
+	line-height: 1.5em;
+}
+
+.user-list .nav-ver-item {
+	padding: 16px 0;
 }
