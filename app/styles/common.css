@@ -594,6 +594,8 @@ table#table-box-futures-hq {
 
 #table-box-futures-hq .change-wrap {
 	text-align: center;
+	display: inline-block;
+	width: 100%;
 }
 
 #table-box-futures-hq span.amt-value {
@@ -610,4 +612,8 @@ table#table-box-futures-hq {
 .table-width-all {
 	display: table;
 	width: 100%;
+}
+
+.hq_lf_box {
+	width: 128px;
 }
