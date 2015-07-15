@@ -5,10 +5,10 @@ module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     storeConfigInMeta: false,
     minifyCSS: {
-      enabled: true
+      enabled: false
     },
     minifyJS: {
-      enabled: true
+      enabled: false
     },
     outputPaths: {
       app: {

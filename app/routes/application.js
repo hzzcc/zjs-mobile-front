@@ -27,7 +27,7 @@ export default Ember.Route.extend(ApplicationRouteMixin,{
         },
         sessionInvalidationSucceeded: function() {
           if (!Ember.testing) {
-            window.location.replace(config.rootURL);
+            window.location.replace(config.baseURL + '/');
           }
         },
     }
